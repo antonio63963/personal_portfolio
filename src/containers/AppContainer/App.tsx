@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Header } from 'components';
 import './App.css';
-import './gradients.css';
 import {HomeContainer} from 'containers';
 
 function App() {

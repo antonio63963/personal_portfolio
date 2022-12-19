@@ -3,7 +3,7 @@
   z-index: 100;
   top: 0;
   width: calc(100%-40px);
-  max-width: calc(var(--maxWidth) - 40px);
+  max-width: var(--maxWidth);
   /* background-color: #212121; */
   padding: 20px 30px;
   width: 100%;
@@ -18,40 +18,4 @@
 .headerImg {
   width: 50px;
   /* height: 50px; */
-}
-.gradientBg {
-  /* ff 3.6+ */
-  background: -moz-radial-gradient(
-    circle at 3% 25%,
-    rgba(4, 12, 24, 1) 0%,
-    rgba(12, 16, 56, 1) 100%
-  );
-
-  /* safari 5.1+,chrome 10+ */
-  background: -webkit-radial-gradient(
-    circle at 3% 25%,
-    rgba(4, 12, 24, 1) 0%,
-    rgba(12, 16, 56, 1) 100%
-  );
-
-  /* opera 11.10+ */
-  background: -o-radial-gradient(
-    circle at 3% 25%,
-    rgba(4, 12, 24, 1) 0%,
-    rgba(12, 16, 56, 1) 100%
-  );
-
-  /* ie 10+ */
-  background: -ms-radial-gradient(
-    circle at 3% 25%,
-    rgba(4, 12, 24, 1) 0%,
-    rgba(12, 16, 56, 1) 100%
-  );
-
-  /* global 92%+ browsers support */
-  background: radial-gradient(
-    circle at 3% 25%,
-    rgba(4, 12, 24, 1) 0%,
-    rgba(12, 16, 56, 1) 100%
-  );
 }

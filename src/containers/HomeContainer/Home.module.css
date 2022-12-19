@@ -10,26 +10,26 @@
   /* transform: translateY(-100%) !important; */
 }
 
-.headline_textBlock {
+.col_text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.headlineTitle {
+.title {
   margin-top: 30px;
   font-size: 52px;
   line-height: 52px;
   font-family: "Archivo Black", sans-serif;
 }
-.header-description {
+.description {
   margin-top: 40px;
   font-size: 22px;
-  color: #81afdd;
+  color: var(--blueTextColor);
   line-height: 27px;
   font-family: "Manrope", sans-serif;
 }
-.hangUp-btn {
+.catchPhone_btn {
   font-family: "Manrope", sans-serif;
   border-radius: 28px;
   background: var(--orangeColor);
@@ -41,7 +41,7 @@
 #lottie {
   max-width: 100%;
 }
-.headline {
+.contentAlign {
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,7 +49,7 @@
   align-items: center;
 }
 
-.col-lottie {
+.col_lottie {
   min-width: 40%;
   margin-left: 20px;
   /* margin-bottom: 45px; */
@@ -60,7 +60,7 @@
   flex-direction: column;
   justify-content: flex-end;
 }
-.lottie-container {
+.lottieContainer {
   /* margin-bottom: 50px; */
   position: relative;
   height: 100%;
@@ -68,16 +68,7 @@
   justify-content: center;
 }
 
-.btn {
-  color: #fff;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 28px;
-}
-.buttons-row {
+.transparentButtonsRow {
   position: absolute;
   bottom: 25%;
   left: 15%;
@@ -87,14 +78,14 @@
   align-items: center;
   justify-content: space-between;
 }
-.btn-animation {
+.animation_btn {
   color: transparent;
   background-color: transparent;
   font-size: 80%;
   width: 100px;
   text-align: center;
 }
-.btn-web {
+.web_btn {
   color: transparent;
   background-color: transparent;
   font-size: 80%;

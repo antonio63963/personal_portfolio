@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import './gradients.css';
 import { App } from "./containers";
 import reportWebVitals from "./reportWebVitals";
 

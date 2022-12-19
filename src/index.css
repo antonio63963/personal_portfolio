@@ -2,6 +2,7 @@
   --bgColor: #040c18;
   --orangeColor: #ff4820;
   --textColor: rgb(241, 241, 241);
+  --blueTextColor: #81afdd;
 
   --maxWidth: 1200px;
 
@@ -25,7 +26,14 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
+.btn {
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 28px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

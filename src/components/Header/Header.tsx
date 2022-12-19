@@ -9,7 +9,7 @@ import  logo from  'assets/logo_web.png';
 
 const Header: FC = () => {
   return (
-    <header className={cn(styles.header, styles.gradientBg)}>
+    <header className={cn(styles.header, 'gradientBg')}>
       <img className={cn(styles.headerImg)} src={logo} alt="logo" />
       <Menu />
     </header>
