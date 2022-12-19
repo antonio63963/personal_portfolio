@@ -1,0 +1,103 @@
+.home {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 50px);
+  /* transform: translateY(-100%) !important; */
+}
+
+.headline_textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headlineTitle {
+  margin-top: 30px;
+  font-size: 52px;
+  line-height: 52px;
+  font-family: "Archivo Black", sans-serif;
+}
+.header-description {
+  margin-top: 40px;
+  font-size: 22px;
+  color: #81afdd;
+  line-height: 27px;
+  font-family: "Manrope", sans-serif;
+}
+.hangUp-btn {
+  font-family: "Manrope", sans-serif;
+  border-radius: 28px;
+  background: var(--orangeColor);
+  margin-top: 40px;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+#lottie {
+  max-width: 100%;
+}
+.headline {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-lottie {
+  min-width: 40%;
+  margin-left: 20px;
+  /* margin-bottom: 45px; */
+  max-width: 100%;
+  min-height: 200px;
+  /* max-height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.lottie-container {
+  /* margin-bottom: 50px; */
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  color: #fff;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 28px;
+}
+.buttons-row {
+  position: absolute;
+  bottom: 25%;
+  left: 15%;
+  right: 15%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-animation {
+  color: transparent;
+  background-color: transparent;
+  font-size: 80%;
+  width: 100px;
+  text-align: center;
+}
+.btn-web {
+  color: transparent;
+  background-color: transparent;
+  font-size: 80%;
+  text-align: center;
+  width: 100px;
+}

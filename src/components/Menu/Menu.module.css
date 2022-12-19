@@ -1,0 +1,8 @@
+.menu {
+  list-style-type: none;
+  display: flex;
+  opacity: 0.5;
+}
+.menu > li {
+  margin-left: 30px;
+}
