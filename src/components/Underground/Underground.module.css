@@ -1,0 +1,9 @@
+.page2 {
+  width: 1200px;
+  height: 100vh;
+  /* max-width: var(--maxWidth); */
+}
+.underground {
+  width: 1200px;
+  height: 100%;
+}

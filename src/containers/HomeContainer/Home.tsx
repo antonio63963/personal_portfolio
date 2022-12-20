@@ -4,7 +4,11 @@ import lottie, { AnimationItem } from "lottie-web";
 import cn from "classnames";
 import styles from "./Home.module.css";
 
-const Home: FC = () => {
+type HomeProps = {
+  goToPortfolio: (data: string) => void;
+};
+
+const Home: FC<HomeProps> = ({ goToPortfolio }) => {
   const lottieContainer = useRef(null);
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
   const [animDirection, setAnimDirection] = useState<number>(1);
@@ -73,7 +77,10 @@ const Home: FC = () => {
         <div className={cn(styles.col_lottie)}>
           <div className={cn(styles.lottieContainer)}>
             <div className={cn(styles.transparentButtonsRow)}>
-              <button className={cn("btn", styles.animation_btn)}>
+              <button
+                className={cn("btn", styles.animation_btn)}
+                onClick={() => goToPortfolio("animation")}
+              >
                 Animation
               </button>
               <button className={cn("btn", styles.web_btn)}>Web</button>
