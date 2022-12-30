@@ -16,43 +16,54 @@ import camoLogo from "assets/icons/camoLogo.png";
 const PortpholioContainer: FC = () => {
   return (
     <div className={cn(styles.container)}>
+      <h1 className={cn(styles.title)}>Projects</h1>
       <div className={cn(styles.project)}>
-        <div className={cn(styles.projectInfo, styles.textInfo)}>
-          <h3>Camo</h3>
-          <p>Social app that allows to share photos, takes comments and likes. </p>
-          <div className={cn(styles.githubRow)}>
-          <a href="https://github.com/antonio63963/camo"><img src={githubIcon} className={cn(styles.githubIcon)} alt="github" /></a>
-          <p>Github repo</p>
+        <div className={cn(styles.projectInfo_wrapper)}>
+          <div className={cn(styles.projectWrapper_circleBg)}></div>
+          <div className={cn(styles.projectWrapper_circleBg_small)}></div>
+          <div className={cn(styles.projectInfo, styles.textInfo)}>
+            {/* <h3>Camo</h3> */}
+            <a className={cn(styles.linkToSite)} target="_blank" href="https://github.com/antonio63963/camo" rel="noreferrer">
+              <div className={cn(styles.projectLogo)}>
+              <img src={camoLogo} className={cn(styles.camoLogo)} alt="github" />
+              </div>
+              www...
+            </a>
+            <p>Social app that allows to share photos, takes comments and likes. </p>
+            <div className={cn(styles.githubRow)}>
+            <a href="https://github.com/antonio63963/camo"><img src={githubIcon} className={cn(styles.githubIcon)} alt="github" /></a>
+            <p>Github repo</p>
+            </div>
+            {/* <div className={cn(styles.githubRow)}>
+            <a href="https://github.com/antonio63963/camo"><img src={camoLogo} className={cn()} alt="github" /></a>
+            <p>Go to site</p>
+            </div> */}
+            <ul className={cn(styles.projectInfo_list)}>
+              <li>
+                <img
+                  className={cn(styles.icon)}
+                  src={tailwindIcon}
+                  alt="tailwind"
+                />
+              </li>
+              <li>
+                <img className={cn(styles.icon)} src={reactIcon} alt="react" />
+              </li>
+              <li>
+                <img className={cn(styles.icon)} src={nodeIcon} alt="react" />
+              </li>
+              <li>
+                <img
+                  className={cn(styles.icon)}
+                  src={expressIcon}
+                  alt="expressjs"
+                />
+              </li>
+              <li>
+                <img className={cn(styles.icon)} src={mongoIcon} alt="mongo" />
+              </li>
+            </ul>
           </div>
-          <div className={cn(styles.githubRow)}>
-          <a href="https://github.com/antonio63963/camo"><img src={camoLogo} className={cn()} alt="github" /></a>
-          <p>Go to site</p>
-          </div>
-          <ul className={cn(styles.projectInfo_list)}>
-            <li>
-              <img
-                className={cn(styles.icon)}
-                src={tailwindIcon}
-                alt="tailwind"
-              />
-            </li>
-            <li>
-              <img className={cn(styles.icon)} src={reactIcon} alt="react" />
-            </li>
-            <li>
-              <img className={cn(styles.icon)} src={nodeIcon} alt="react" />
-            </li>
-            <li>
-              <img
-                className={cn(styles.icon)}
-                src={expressIcon}
-                alt="expressjs"
-              />
-            </li>
-            <li>
-              <img className={cn(styles.icon)} src={mongoIcon} alt="mongo" />
-            </li>
-          </ul>
         </div>
         <div className={cn(styles.projectImage)}>
           <img src={camoBg} alt="project" className={cn(styles.image)} />
