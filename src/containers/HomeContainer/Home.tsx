@@ -83,9 +83,11 @@ const Home: FC<HomeProps> = ({ goToPortfolio }) => {
               >
                 Animation
               </button>
-              <button className={cn("btn", styles.web_btn)}>Web</button>
+              <button className={cn("btn", styles.web_btn)}>
+                Web
+              </button>
             </div>
-            <div ref={lottieContainer} className="container"></div>
+            <div ref={lottieContainer} className={cn(styles.lottieContainer)}></div>
           </div>
         </div>
       </div>

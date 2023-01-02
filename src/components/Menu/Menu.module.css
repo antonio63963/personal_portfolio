@@ -1,9 +1,51 @@
-.menu {
+.menuDesk {
   list-style-type: none;
   display: flex;
+  align-items: center;
   opacity: 0.5;
 }
-.menu > li {
+.lockIcon {
+  width: 1rem;
+  margin-right: 10px;
+}
+.socials {
+  display: flex;
+}
+.socialIcon {
+  width: 1.5rem;
+  margin-left: 15px;
+}
+.menuDesk > li {
+  display: flex;
+  align-items: center;
+  margin: 0;
   margin-left: 30px;
   cursor: pointer;
+  width: 100%
+}
+.menuDesk:last-child {
+  margin-left: 0;
+}
+
+.menuMobile {
+  display: none;
+}
+.menuMobile_item {
+  width: 100%;
+  height: 3px;
+  background-color: var(--textColor);
+}
+
+@media screen and (max-width: 580px) {
+  .menuDesk {
+    display: none;
+  }
+  .menuMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+    width: 25px;
+    opacity: .7;
+  }
 }

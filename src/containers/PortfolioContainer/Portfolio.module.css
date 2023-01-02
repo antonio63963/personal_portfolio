@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  padding-top: 100px;
+  color: #fff;
+  padding: 108px 30px;
+}
+.title {
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 30px;
+  font-size: 52px;
+  color: var(--textColor);
+}
+.projectsRow {
+  display: flex;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 850px) {
+  .title {
+    font-size: 48px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .container {
+    padding: 108px 20px
+  }
+  .title {
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .projectsRow {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 580px) {
+  .container {
+    padding: 64px 10px
+  }
+}
+

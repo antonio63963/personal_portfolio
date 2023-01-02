@@ -1,4 +1,5 @@
 .home {
+  overflow-y: auto;
   margin-top: 70px;
   width: 100%;
   display: flex;
@@ -8,6 +9,7 @@
   justify-content: space-between;
   height: calc(100vh - 50px);
   /* transform: translateY(-100%) !important; */
+  margin-bottom: 50px;
 }
 
 .col_text {
@@ -91,4 +93,58 @@
   font-size: 80%;
   text-align: center;
   width: 100px;
+}
+
+@media screen and (max-width: 850px) {
+  .title {
+    font-size: 48px;
+    line-height: 42px;
+  }
+  .description {
+    margin-top: 32px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 715px) {
+  .home {
+    padding: 20px;
+    margin-top: 54px;
+  }
+  .title {
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .catchPhone_btn {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .home {
+    padding: 10px;
+  }
+  .title {
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .catchPhone_btn {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+ .contentAlign {
+  flex-direction: column;
+ }
 }
