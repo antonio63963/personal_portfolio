@@ -6,6 +6,7 @@ const authContext = createContext<TAppContext>({
   isAccessible: false,
   setIsAccessible: () => {},
   portfolio: Portfolio.no,
+  setPortfolio: () => {}
 });
 
 export default authContext;

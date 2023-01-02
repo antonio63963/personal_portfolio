@@ -7,6 +7,7 @@ type TAppContext = {
   isAccessible: boolean;
   setIsAccessible(value: boolean): void;
   portfolio: Portfolio;
+  setPortfolio(value: Portfolio): void;
 };
 
 export type {

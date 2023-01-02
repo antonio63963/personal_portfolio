@@ -7,13 +7,14 @@ import AppContext from "context/AppContext";
 import { HomeContainer } from "containers";
 import Underground from "components/Underground/Underground";
 import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer";
-import { Portfolio, TAppContext } from "context/AppContext.type";
+import { Portfolio } from "context/AppContext.type";
 
 function App() {
   const portfolioSection = useRef<HTMLDivElement>(null);
   const [isShownHome, setIsShownHome] = useState<boolean>(true);
   const [isShownPortfolio, setIsShownPortfolio] = useState<boolean>(false);
   const [isAccessible, setIsAccessible] = useState<boolean>(false);
+  const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.no);
 
   const goToPortfolio = useCallback((portfolio: string) => {
     setIsShownPortfolio(true);
@@ -36,9 +37,12 @@ function App() {
 
   return (
     <AppContext.Provider
-      isAccessible={isAccessible}
-      setIsAccessible={setIsAccessible}
-      portfolio={Portfolio.no}
+      value={{
+        isAccessible,
+        setIsAccessible,
+        portfolio,
+        setPortfolio,
+      }}
     >
       <div className="App">
         <Header />
