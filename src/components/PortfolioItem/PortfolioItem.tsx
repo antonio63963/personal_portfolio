@@ -68,7 +68,7 @@ const PortfolioItem: FC<TItem> = ({
           <ul className={cn(styles.projectInfo_list)}>
             {techList.map((tech, index) => {
               return (
-                <li>
+                <li key={`${tech}-${index}`}>
                   <img className={cn(styles.icon)} src={tech} alt={`${tech}`} />
                 </li>
               );
