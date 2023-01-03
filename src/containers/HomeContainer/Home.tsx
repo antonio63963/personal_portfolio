@@ -1,20 +1,30 @@
-import { FC, useState, useEffect, useRef } from "react";
+import {
+  FC,
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useContext,
+} from "react";
 import lottie, { AnimationItem } from "lottie-web";
-
 import cn from "classnames";
+
+import AppContext from "context/AppContext";
 import styles from "./Home.module.css";
+import { Portfolio } from "context/AppContext.type";
 
 type HomeProps = {
-  goToPortfolio: (data: string) => void;
+  scrollToPortfolio: (data: Portfolio) => void;
 };
 
-const Home: FC<HomeProps> = ({ goToPortfolio }) => {
+const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
+  const { setIsLocked } = useContext(AppContext);
   const lottieContainer = useRef(null);
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
   const [animDirection, setAnimDirection] = useState<number>(1);
   const [isCatchUp, setIsCatchUp] = useState<boolean>(true);
 
-  function catchUp() {
+  const catchUpThePhone = useCallback(() => {
     if (!lottieAnimation || animDirection === 0) return;
     if (animDirection === 1) {
       setAnimDirection(0);
@@ -32,7 +42,50 @@ const Home: FC<HomeProps> = ({ goToPortfolio }) => {
         setIsCatchUp(true);
       });
     }
-  }
+  }, [animDirection, lottieAnimation]);
+  // hover
+  const onMotionEnter = useCallback(() => {
+    if (lottieAnimation) {
+      lottieAnimation.playSegments([112, 122], true);
+    }
+  }, [lottieAnimation]);
+  const onMotionLeave = useCallback(() => {
+    if (lottieAnimation) {
+      lottieAnimation.playSegments([122, 112], true);
+    }
+  }, [lottieAnimation]);
+
+  const onWebEnter = useCallback(() => {
+    if (lottieAnimation) {
+      lottieAnimation.playSegments([101, 111], true);
+    }
+  }, [lottieAnimation]);
+  const onWebLeave = useCallback(() => {
+    if (lottieAnimation) {
+      lottieAnimation.playSegments([111, 101], true);
+    }
+  }, [lottieAnimation]);
+
+  // onClick
+  const onPortfolioClick = useCallback(
+    (portfolio: Portfolio) => {
+      if (lottieAnimation) {
+        lottieAnimation.playSegments([130, 200], true);
+      }
+
+      let markerInterval: boolean = false;
+      const timerId = setInterval(() => {
+        if (!markerInterval) {
+          markerInterval = true;
+          scrollToPortfolio(portfolio);
+          setIsLocked(false);
+        } else {
+          clearInterval(timerId);
+        }
+      }, 2200);
+    },
+    [lottieAnimation, scrollToPortfolio, setIsLocked]
+  );
 
   useEffect(() => {
     if (lottieContainer?.current) {
@@ -68,7 +121,7 @@ const Home: FC<HomeProps> = ({ goToPortfolio }) => {
           <div>
             <button
               className={cn("btn", styles.catchPhone_btn)}
-              onClick={catchUp}
+              onClick={catchUpThePhone}
             >
               {isCatchUp ? "Catch Up" : "Hang Up"}
             </button>
@@ -79,15 +132,25 @@ const Home: FC<HomeProps> = ({ goToPortfolio }) => {
             <div className={cn(styles.transparentButtonsRow)}>
               <button
                 className={cn("btn", styles.animation_btn)}
-                onClick={() => goToPortfolio("animation")}
+                onClick={() => onPortfolioClick(Portfolio.motion)}
+                onMouseEnter={onWebEnter}
+                onMouseLeave={onWebLeave}
               >
                 Animation
               </button>
-              <button className={cn("btn", styles.web_btn)}>
+              <button
+                onMouseEnter={onMotionEnter}
+                onMouseLeave={onMotionLeave}
+                className={cn("btn", styles.web_btn)}
+                onClick={() => onPortfolioClick(Portfolio.web)}
+              >
                 Web
               </button>
             </div>
-            <div ref={lottieContainer} className={cn(styles.lottieContainer)}></div>
+            <div
+              ref={lottieContainer}
+              className={cn(styles.lottieContainer)}
+            ></div>
           </div>
         </div>
       </div>

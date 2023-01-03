@@ -13,14 +13,14 @@ function App() {
   const portfolioSection = useRef<HTMLDivElement>(null);
   const [isShownHome, setIsShownHome] = useState<boolean>(true);
   const [isShownPortfolio, setIsShownPortfolio] = useState<boolean>(false);
-  const [isAccessible, setIsAccessible] = useState<boolean>(false);
+  const [isLocked, setIsLocked] = useState<boolean>(true);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.no);
 
-  const goToPortfolio = useCallback((portfolio: string) => {
+  const scrollToPortfolio = useCallback((portfolio: Portfolio) => {
+    setPortfolio(portfolio);
     setIsShownPortfolio(true);
     let timerScroll = setTimeout(() => {
       if (portfolioSection.current) {
-        console.log("scrollTo");
         window.scrollTo({
           top: portfolioSection.current.offsetTop,
           behavior: "smooth",
@@ -38,20 +38,20 @@ function App() {
   return (
     <AppContext.Provider
       value={{
-        isAccessible,
-        setIsAccessible,
+        isLocked,
+        setIsLocked,
         portfolio,
         setPortfolio,
       }}
     >
       <div className="App">
         <Header />
-        {isShownHome && <HomeContainer goToPortfolio={goToPortfolio} />}
+        {isShownHome && <HomeContainer scrollToPortfolio={scrollToPortfolio} />}
         {isShownPortfolio && (
           <section className="sectionPortfolio">
             {isShownHome && <Underground />}
             <div ref={portfolioSection}>
-              <PortfolioContainer />
+              <PortfolioContainer portfolio={portfolio} />
             </div>
           </section>
         )}

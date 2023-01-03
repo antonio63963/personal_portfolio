@@ -4,8 +4,8 @@ export enum Portfolio {
   'no' = 'no',
 }
 type TAppContext = {
-  isAccessible: boolean;
-  setIsAccessible(value: boolean): void;
+  isLocked: boolean;
+  setIsLocked(value: boolean): void;
   portfolio: Portfolio;
   setPortfolio(value: Portfolio): void;
 };
