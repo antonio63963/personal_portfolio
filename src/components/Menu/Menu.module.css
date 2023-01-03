@@ -2,7 +2,6 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-  opacity: 0.5;
 }
 .lockIcon {
   width: 1rem;
@@ -16,12 +15,18 @@
   margin-left: 15px;
 }
 .menuDesk > li {
+  opacity: 0.5;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   margin: 0;
   margin-left: 30px;
   cursor: pointer;
-  width: 100%
+  width: 100%;
+  transition: opacity 0.5 ease-in-out;
+}
+.menuDesk > li:hover {
+  opacity: 1;
 }
 .menuDesk:last-child {
   margin-left: 0;
