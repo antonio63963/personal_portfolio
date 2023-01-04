@@ -1,0 +1,6 @@
+.motionItemsRow {
+  display: flex;
+}
+.lottieContainer {
+  max-width: 700px;
+}

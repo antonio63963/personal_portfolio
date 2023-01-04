@@ -13,6 +13,7 @@ import { Portfolio } from "context/AppContext.type";
 type TMenu = {
   isLocked: boolean;
   portfolioType: Portfolio;
+  scrollToSkils: () => void;
 };
 
 enum TLink {
@@ -21,7 +22,7 @@ enum TLink {
   "skils" = "skils",
 }
 
-const Menu: FC<TMenu> = ({ isLocked, portfolioType }) => {
+const Menu: FC<TMenu> = ({ isLocked, portfolioType, scrollToSkils }) => {
   const otherPortfolio =
     portfolioType === Portfolio.no
       ? "projects"
@@ -47,7 +48,7 @@ const Menu: FC<TMenu> = ({ isLocked, portfolioType }) => {
       default:
         return;
     }
-  }, []);
+  }, [otherPortfolio]);
 
   const onLinkEnter = useCallback((link: TLink) => {
     switch (link) {
@@ -83,6 +84,7 @@ const Menu: FC<TMenu> = ({ isLocked, portfolioType }) => {
           {isLocked ? projectsLink : otherPortfolio}
         </li>
         <li
+          onClick={scrollToSkils}
           onMouseEnter={() => (isLocked ? onLinkEnter(TLink.skils) : null)}
           onMouseLeave={() => (isLocked ? onLinkLeave(TLink.skils) : null)}
         >
