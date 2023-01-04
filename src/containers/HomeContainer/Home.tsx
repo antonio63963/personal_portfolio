@@ -23,6 +23,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
   const [animDirection, setAnimDirection] = useState<number>(1);
   const [isCatchUp, setIsCatchUp] = useState<boolean>(true);
+  const [isMorpheusBtnActive, setIsMorpheusBtnActive] = useState<boolean>(false);
 
   const catchUpThePhone = useCallback(() => {
     if (!lottieAnimation || animDirection === 0) return;
@@ -33,6 +34,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
       lottieAnimation.addEventListener("complete", () => {
         setAnimDirection(-1);
         setIsCatchUp(false);
+        setIsMorpheusBtnActive(true);
       });
     } else {
       setAnimDirection(0);
@@ -40,36 +42,38 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
       lottieAnimation.addEventListener("complete", () => {
         setAnimDirection(1);
         setIsCatchUp(true);
+        setIsMorpheusBtnActive(false);
       });
     }
   }, [animDirection, lottieAnimation]);
   // hover
   const onMotionEnter = useCallback(() => {
-    if (lottieAnimation) {
+    if (lottieAnimation && isMorpheusBtnActive) {
       lottieAnimation.playSegments([112, 122], true);
     }
-  }, [lottieAnimation]);
+  }, [isMorpheusBtnActive, lottieAnimation]);
   const onMotionLeave = useCallback(() => {
-    if (lottieAnimation) {
+    if (lottieAnimation && isMorpheusBtnActive) {
       lottieAnimation.playSegments([122, 112], true);
     }
-  }, [lottieAnimation]);
+  }, [isMorpheusBtnActive, lottieAnimation]);
 
   const onWebEnter = useCallback(() => {
-    if (lottieAnimation) {
+    if (lottieAnimation && isMorpheusBtnActive) {
       lottieAnimation.playSegments([101, 111], true);
     }
-  }, [lottieAnimation]);
+  }, [isMorpheusBtnActive, lottieAnimation]);
   const onWebLeave = useCallback(() => {
-    if (lottieAnimation) {
+    if (lottieAnimation && isMorpheusBtnActive) {
       lottieAnimation.playSegments([111, 101], true);
     }
-  }, [lottieAnimation]);
+  }, [isMorpheusBtnActive, lottieAnimation]);
 
   // onClick
   const onPortfolioClick = useCallback(
     (portfolio: Portfolio) => {
-      if (lottieAnimation) {
+      if (lottieAnimation && isMorpheusBtnActive) {
+        setIsMorpheusBtnActive(false);
         lottieAnimation.playSegments([130, 200], true);
       }
 
@@ -84,7 +88,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
         }
       }, 2200);
     },
-    [lottieAnimation, scrollToPortfolio, setIsLocked]
+    [isMorpheusBtnActive, lottieAnimation, scrollToPortfolio, setIsLocked]
   );
 
   useEffect(() => {

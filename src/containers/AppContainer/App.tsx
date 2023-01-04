@@ -33,7 +33,7 @@ function App() {
           clearTimeout(timerDeleteHome);
           console.log("TimerDell: ", timerDeleteHome);
         }, 1000);
-        clearTimeout(timerScroll);
+        // clearTimeout(timerScroll);
       }
     }, 100);
   }, []);
@@ -52,7 +52,7 @@ function App() {
         // }, 1000);
         // clearTimeout(timerScroll);
       }
-    }, 100);
+    }, 50);
   }, []);
 
   return (
