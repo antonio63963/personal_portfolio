@@ -1,6 +1,10 @@
 .skilsSection {
-  overflow: scroll;
+  /* overflow: scroll; */
   padding: 0 30px;
+  max-width: var(--maxWidth);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
 
 .title {
@@ -15,27 +19,27 @@
 }
 
 .skilsRow {
-  margin-top: 30px;
+  flex-wrap: wrap;
+  margin-top: 35px;
   display: flex;
   justify-content: space-between;
 }
 
 .skilsCol {
   /* border: 1px solid #E0E0E0; */
-  background-color: #041811;
+  /* background-color: #24195E; */
+  flex: 2 2 auto;
+  margin: 7px 15px;
   border-radius: 15px;
-  width: 210px;
+  min-width: 210px;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  color: var(--textColor);
-  
 }
 
 .skilCol_title {
   text-align: center;
-  margin: 15px 0;
+  margin: 7px 0 15px 0;
 }
 
 .listSkils {
@@ -44,7 +48,8 @@
 }
 .listSkils>li {
   list-style-type: none;
-  opacity: .7;
+  /* opacity: .7; */
+  color: var(--blueTextColor);
   margin: 5px;
   line-height: 1.2rem;
   width: 100%;
@@ -69,6 +74,9 @@
     font-size: 36px;
     line-height: 30px;
   }
+  /* .skilsRow {
+    flex-direction: column;
+  } */
 }
 
 @media screen and (max-width: 580px) {

@@ -1,7 +1,6 @@
 export enum Portfolio {
-  'web' = 'web',
-  'motion' = 'motion',
-  'no' = 'no',
+  'web' = 'Web',
+  'motion' = 'Motion',
 }
 type TAppContext = {
   isLocked: boolean;

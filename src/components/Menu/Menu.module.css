@@ -28,6 +28,9 @@
 .menuDesk > li:hover {
   opacity: 1;
 }
+.menuDesk > li:hover>img {
+  animation: wiggleLock .3s ease-in-out infinite;
+}
 .menuDesk:last-child {
   margin-left: 0;
 }
@@ -53,4 +56,10 @@
     width: 25px;
     opacity: .7;
   }
+}
+
+@keyframes wiggleLock {
+  0% {transform: translateX(0)}
+  50% {transform: translateX(-2px)}
+  100% {transform: translateX(2px)}
 }

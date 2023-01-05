@@ -35,7 +35,7 @@ const SkilsContainer: FC = () => {
       <h1 className={cn(styles.title, "titleGradient")}>Skils</h1>
         <div onScroll={handleScroll} className={cn(styles.lottieContainer)} ref={lottieContainer}></div>
       <div className={cn(styles.skilsRow)}>
-        <div className={cn(styles.skilsCol)}>
+        <div className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Motion Design</h3>
           <ul className={cn(styles.listSkils)}>
             <li>Adobe Illustrator</li>
@@ -43,14 +43,14 @@ const SkilsContainer: FC = () => {
             <li>Moho(Anime Studio)</li>
             <li>Characters</li>
             <li>Lottie</li>
-            <li>Mongoose</li>
+            {/* <li>Mongoose</li> */}
           </ul>
         </div>
 
-        <div className={cn(styles.skilsCol)}>
+        <div style={{marginLeft: 'auto'}} className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Fontend</h3>
           <ul className={cn(styles.listSkils)}>
-            <li>Javascript</li>
+            <li>Ionic</li>
             <li>Typescript</li>
             <li>Html5</li>
             <li>Css3</li>
@@ -59,7 +59,7 @@ const SkilsContainer: FC = () => {
           </ul>
         </div>
 
-        <div className={cn(styles.skilsCol)}>
+        <div className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Backend</h3>
           <ul className={cn(styles.listSkils)}>
             <li>Javascript</li>

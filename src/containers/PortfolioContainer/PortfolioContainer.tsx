@@ -13,7 +13,7 @@ type TPortfolio = {
 const PortfolioContainer: FC<TPortfolio> = ({portfolio}) => {
   return (
     <div className={cn(styles.container)}>
-      <h1 className={cn(styles.title, "titleGradient")}>Projects</h1>
+      <h1 className={cn(styles.title, "titleGradient")}>{portfolio} Projects</h1>
      {portfolio === Portfolio.web ? <WebPortfolioLayout /> : null}
     </div>
   );

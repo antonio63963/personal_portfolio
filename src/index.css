@@ -1,6 +1,7 @@
 :root {
   --bgColor: #040c18;
   --orangeColor: #ff4820;
+  --purpleColor: #7E57C2;
   --textColor: rgb(241, 241, 241);
   --blueTextColor: #81afdd;
   --grayDark: #757575;
@@ -20,10 +21,14 @@
 
 body {
   overflow-y: scroll;
+  overflow-x: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Manrope", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Archivo Black", sans-serif;
 }
 
 .btn {

@@ -23,7 +23,8 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
   const [animDirection, setAnimDirection] = useState<number>(1);
   const [isCatchUp, setIsCatchUp] = useState<boolean>(true);
-  const [isMorpheusBtnActive, setIsMorpheusBtnActive] = useState<boolean>(false);
+  const [isMorpheusBtnActive, setIsMorpheusBtnActive] =
+    useState<boolean>(false);
 
   const catchUpThePhone = useCallback(() => {
     if (!lottieAnimation || animDirection === 0) return;
@@ -70,23 +71,18 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
   }, [isMorpheusBtnActive, lottieAnimation]);
 
   // onClick
+
   const onPortfolioClick = useCallback(
     (portfolio: Portfolio) => {
       if (lottieAnimation && isMorpheusBtnActive) {
         setIsMorpheusBtnActive(false);
         lottieAnimation.playSegments([130, 200], true);
-      }
-
-      let markerInterval: boolean = false;
-      const timerId = setInterval(() => {
-        if (!markerInterval) {
-          markerInterval = true;
-          scrollToPortfolio(portfolio);
+        lottieAnimation.addEventListener("complete", () => {
+          setIsMorpheusBtnActive(false); // withot this double code on last second on scroll down the Morpheus will be visible
           setIsLocked(false);
-        } else {
-          clearInterval(timerId);
-        }
-      }, 2200);
+          scrollToPortfolio(portfolio);
+        });
+      }
     },
     [isMorpheusBtnActive, lottieAnimation, scrollToPortfolio, setIsLocked]
   );

@@ -3,9 +3,9 @@ import { createContext } from 'react';
 import { TAppContext, Portfolio } from './AppContext.type';
 
 const authContext = createContext<TAppContext>({
-  isLocked: false,
+  isLocked: true,
   setIsLocked: () => {},
-  portfolio: Portfolio.no,
+  portfolio: Portfolio.motion,
   setPortfolio: () => {}
 });
 
