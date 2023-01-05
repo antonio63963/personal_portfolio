@@ -1,7 +1,9 @@
-import { FC, useCallback, useState, useContext } from "react";
+import { FC, useCallback, useState, useContext, useEffect } from "react";
 
 import cn from "classnames";
 import styles from "./Menu.module.css";
+
+import AppContext from "context/AppContext";
 
 import lock from "assets/icons/lock.svg";
 import behance from "assets/icons/behance.svg";
@@ -13,58 +15,29 @@ import { Portfolio } from "context/AppContext.type";
 type TMenu = {
   isLocked: boolean;
   portfolioType: Portfolio;
+  setPortfolioType: (data: Portfolio) => void;
   scrollToSkils: () => void;
+  scrollToPortfolio: (portfolioType: Portfolio) => void;
 };
 
-enum TLink {
-  "projects" = "projects",
-  "about" = "about",
-  "skils" = "skils",
-}
+const Menu: FC<TMenu> = ({
+  isLocked,
+  portfolioType,
+  setPortfolioType,
+  scrollToSkils,
+  scrollToPortfolio,
+}) => {
+  const { portfolio } = useContext(AppContext);
 
-const Menu: FC<TMenu> = ({ isLocked, portfolioType, scrollToSkils }) => {
-  const otherPortfolio =
-    portfolioType === Portfolio.no
-      ? "projects"
-      : portfolioType === Portfolio.motion
-      ? Portfolio.web
-      : Portfolio.motion;
-  console.log(portfolioType, otherPortfolio);
-  const [projectsLink, setProjectsLink] = useState<string>(otherPortfolio);
-  const [skilsLink, setSkilsLink] = useState<string>("Skils");
-  const [aboutLink, setAboutLink] = useState<string>("About");
+  const [otherPortfolio, setOtherPortfolio] = useState<Portfolio>(
+    portfolio === Portfolio.motion ? Portfolio.web : Portfolio.motion
+  );
 
-  const onLinkLeave = useCallback((link: string) => {
-    switch (link) {
-      case TLink.projects:
-        setProjectsLink(otherPortfolio);
-        break;
-      case TLink.skils:
-        setSkilsLink("Skils");
-        break;
-      case TLink.about:
-        setAboutLink("About");
-        break;
-      default:
-        return;
-    }
-  }, [otherPortfolio]);
-
-  const onLinkEnter = useCallback((link: TLink) => {
-    switch (link) {
-      case TLink.projects:
-        setProjectsLink("Catch it up!");
-        break;
-      case TLink.skils:
-        setSkilsLink("Catch it up!");
-        break;
-      case TLink.about:
-        setAboutLink("Catch it up!");
-        break;
-      default:
-        return;
-    }
-  }, []);
+  useEffect(() => {
+    setOtherPortfolio(
+      portfolio === Portfolio.motion ? Portfolio.web : Portfolio.motion
+    );
+  }, [portfolio]);
 
   return (
     <>
@@ -75,32 +48,30 @@ const Menu: FC<TMenu> = ({ isLocked, portfolioType, scrollToSkils }) => {
       </div>
       <ul className={cn(styles.menuDesk)}>
         <li
-          onMouseEnter={() => (isLocked ? onLinkEnter(TLink.projects) : null)}
-          onMouseLeave={() => (isLocked ? onLinkLeave(TLink.projects) : null)}
+          onClick={
+            !isLocked
+              ? () => {
+                  scrollToPortfolio(otherPortfolio);
+                }
+              : () => {}
+          }
         >
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
-          {isLocked ? projectsLink : otherPortfolio}
+          {isLocked ? "Projects" : otherPortfolio}
         </li>
-        <li
-          onClick={scrollToSkils}
-          onMouseEnter={() => (isLocked ? onLinkEnter(TLink.skils) : null)}
-          onMouseLeave={() => (isLocked ? onLinkLeave(TLink.skils) : null)}
-        >
+        <li onClick={scrollToSkils}>
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
-          {skilsLink}
+          Skils
         </li>
-        <li
-          onMouseEnter={() => (isLocked ? onLinkEnter(TLink.about) : null)}
-          onMouseLeave={() => (isLocked ? onLinkLeave(TLink.about) : null)}
-        >
+        <li>
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
-          {aboutLink}
+          About
         </li>
         <li>
           <div className={cn(styles.socials)}>
