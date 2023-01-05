@@ -9,21 +9,21 @@ import Underground from "components/Underground/Underground";
 import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer";
 import { Portfolio } from "context/AppContext.type";
 import SkilsContainer from "containers/SkilsContainer/SkilsContainer";
+import Footer from "components/Footer/Footer";
 
 function App() {
   const portfolioSection = useRef<HTMLDivElement>(null);
   const skilsSection = useRef<HTMLDivElement>(null);
   const [isShownHome, setIsShownHome] = useState<boolean>(true);
-  const [isShownPortfolio, setIsShownPortfolio] = useState<boolean>(false);
   const [isLocked, setIsLocked] = useState<boolean>(true);
-  const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.no);
-  const [isShownSkils, setIsShownSkils] = useState<boolean>(false);
+  const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
 
   const scrollToPortfolio = useCallback((portfolio: Portfolio) => {
     setPortfolio(portfolio);
-    setIsShownPortfolio(true);
-    let timerScroll = setTimeout(() => {
-      if (portfolioSection.current) {
+    let markerTimerScroll = false;
+    const timerScroll = setInterval(() => {
+      if (portfolioSection.current && !markerTimerScroll) {
+        markerTimerScroll = true;
         window.scrollTo({
           top: portfolioSection.current.offsetTop,
           behavior: "smooth",
@@ -31,28 +31,20 @@ function App() {
         let timerDeleteHome = setTimeout(() => {
           setIsShownHome(false);
           clearTimeout(timerDeleteHome);
-          console.log("TimerDell: ", timerDeleteHome);
         }, 1000);
-        // clearTimeout(timerScroll);
+      } else {
+        clearInterval(timerScroll);
       }
     }, 100);
   }, []);
+
   const scrollToSkils = useCallback(() => {
-    setIsShownSkils(true);
-    let timerScroll = setTimeout(() => {
       if (skilsSection.current) {
         window.scrollTo({
           top: skilsSection.current.offsetTop,
           behavior: "smooth",
         });
-        // let timerDeleteHome = setTimeout(() => {
-        //   setIsShownHome(false);
-        //   clearTimeout(timerDeleteHome);
-        //   console.log("TimerDell: ", timerDeleteHome);
-        // }, 1000);
-        // clearTimeout(timerScroll);
       }
-    }, 50);
   }, []);
 
   return (
@@ -65,23 +57,25 @@ function App() {
       }}
     >
       <div className="App">
-        <Header scrollToSkils={scrollToSkils}/>
+        <Header
+          scrollToSkils={scrollToSkils}
+          scrollToPortfolio={scrollToPortfolio}
+        />
         {isShownHome && <HomeContainer scrollToPortfolio={scrollToPortfolio} />}
-        {isShownPortfolio && (
+        {!isLocked && (
           <>
             <section className="sectionPortfolio">
               {isShownHome && <Underground />}
               <div ref={portfolioSection}>
-                <PortfolioContainer portfolio={portfolio}/>
+                <PortfolioContainer portfolio={portfolio} />
               </div>
             </section>
-            {isShownSkils && (
-              <div ref={skilsSection}>
-                <SkilsContainer />
-              </div>
-            )}
+            <div ref={skilsSection}>
+              <SkilsContainer />
+            </div>
           </>
         )}
+        {/* <Footer /> */}
       </div>
     </AppContext.Provider>
   );

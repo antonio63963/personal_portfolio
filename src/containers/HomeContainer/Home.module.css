@@ -38,6 +38,11 @@
   margin-top: 40px;
   padding: 10px 20px;
   font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+.catchPhone_btn:hover {
+  background: var(--purpleColor);
+  letter-spacing: .1em;
 }
 
 #lottie {
