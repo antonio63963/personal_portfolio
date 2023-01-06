@@ -1,0 +1,13 @@
+.motionItem {
+  flex-grow: 2;
+  min-width: 300px;
+  max-width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+}
+.motionItem_image {
+  object-fit: cover;
+  width: 100%; height: 100%;
+}

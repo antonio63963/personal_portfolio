@@ -75,7 +75,7 @@ function App() {
             </div>
           </>
         )}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </AppContext.Provider>
   );
