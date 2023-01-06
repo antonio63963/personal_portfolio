@@ -1,0 +1,38 @@
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  max-width: var(--maxWidth);
+  padding: 30px;
+}
+.contacts {
+  color: var(--textColor);
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h4 {
+  opacity: .7;
+}
+.contacts_row {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+}
+.icon {
+  opacity: .7;
+  width: 20px;
+  margin-right: 15px;
+}
+.socials {
+ margin-top: 10px;
+}
+.socials>a:last-child>.icon {
+  margin: 0;
+}
+.socials a>img:hover {
+  opacity: 1;
+}
