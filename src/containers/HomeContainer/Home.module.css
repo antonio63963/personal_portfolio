@@ -39,10 +39,25 @@
   padding: 10px 20px;
   font-size: 20px;
   transition: all .3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+.catchPhone_btn>img {
+  width: 20px;
+  margin-left: 10px;
 }
 .catchPhone_btn:hover {
   background: var(--purpleColor);
   letter-spacing: .1em;
+}
+.catchPhone_btn:hover>img {
+  animation: arrowMoving .3s ease-in-out infinite;
+
+}
+@keyframes arrowMoving {
+  0% {transform: translateX(0)}
+  50% {transform: translateX(2px)}
+  100% {transform: translateX(0px)}
 }
 
 #lottie {

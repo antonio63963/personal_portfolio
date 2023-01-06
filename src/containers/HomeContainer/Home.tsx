@@ -13,6 +13,8 @@ import AppContext from "context/AppContext";
 import styles from "./Home.module.css";
 import { Portfolio } from "context/AppContext.type";
 
+import arrowIcon from 'assets/icons/arrow.svg';
+
 type HomeProps = {
   scrollToPortfolio: (data: Portfolio) => void;
 };
@@ -124,6 +126,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
               onClick={catchUpThePhone}
             >
               {isCatchUp ? "Catch Up" : "Hang Up"}
+              <img src={arrowIcon} alt="arrow" />
             </button>
           </div>
         </div>
