@@ -73,9 +73,9 @@ function App() {
             <div ref={skilsSection}>
               <SkilsContainer />
             </div>
+            <Footer />
           </>
         )}
-        <Footer />
       </div>
     </AppContext.Provider>
   );

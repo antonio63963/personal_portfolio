@@ -7,9 +7,13 @@ import girl from "assets/gifs/girl.gif";
 import girlCover from "assets/covers/girlCover.png";
 import hockey from "assets/gifs/hockey.gif";
 import hockeyCover from "assets/covers/hockeyCover.png";
+import itaka from "assets/gifs/itaka.gif";
+import itakaCover from "assets/covers/itakaCover.png";
+
+import behance from "assets/icons/behance.svg";
 
 import styles from "./MotionPortfolioLayout.module.css";
-import {MotionItem} from "components";
+import { ButtonLink, MotionItem } from "components";
 
 const MotionPortfolioLayout: FC = () => {
   return (
@@ -17,21 +21,15 @@ const MotionPortfolioLayout: FC = () => {
       <div className={cn(styles.motionItemsRow)}>
         <MotionItem cover={devsteamCover} gif={devsteamGif} />
         <MotionItem cover={girlCover} gif={girl} />
-        {/* <div className={cn(styles.motionItem)}>
-          <img
-            className={cn(styles.motionItem_image)}
-            src={devsteamCover}
-            alt="devsteam"
-          />
-        </div>
-        <div className={cn(styles.motionItem)}>
-          <img
-            className={cn(styles.motionItem_image)}
-            src={hockeyCover}
-            alt="devsteam"
-          />
-        </div> */}
+        <MotionItem cover={hockeyCover} gif={hockey} />
+        <MotionItem cover={itakaCover} gif={itaka} />
       </div>
+
+      <ButtonLink
+        link="https://www.behance.net/shotvideo25"
+        img={behance}
+        text="More projects"
+      />
     </section>
   );
 };

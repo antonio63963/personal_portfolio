@@ -1,0 +1,23 @@
+.button {
+  font-family: "Manrope", sans-serif;
+   border-radius: 28px;
+   background: var(--orangeColor);
+   margin-top: 40px;
+   padding: 10px 20px;
+   font-size: 20px;
+   display: flex;
+   align-items: center;
+   white-space: nowrap;
+   transition: all .3s ease-in-out;
+}
+a {
+ text-decoration: none;
+}
+.button>img {
+ width: 28px;
+ margin-left: 15px;
+}
+.button:hover {
+ background: var(--purpleColor);
+ letter-spacing: .1em;
+}
