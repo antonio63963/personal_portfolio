@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 
-import { Header } from "components";
+import { About, Header } from "components";
 import "./App.css";
 
 import AppContext from "context/AppContext";
@@ -10,10 +10,13 @@ import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer
 import { Portfolio } from "context/AppContext.type";
 import SkilsContainer from "containers/SkilsContainer/SkilsContainer";
 import Footer from "components/Footer/Footer";
+import useElementOnScreen from "hooks/useElementOnScreen";
 
 function App() {
   const portfolioSection = useRef<HTMLDivElement>(null);
   const skilsSection = useRef<HTMLDivElement>(null);
+  const aboutSection = useRef<HTMLDivElement>(null);
+
   const [isShownHome, setIsShownHome] = useState<boolean>(true);
   const [isLocked, setIsLocked] = useState<boolean>(true);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
@@ -46,6 +49,14 @@ function App() {
         });
       }
   }, []);
+  const scrollToAbout = useCallback(() => {
+      if (skilsSection.current) {
+        window.scrollTo({
+          top: skilsSection.current.offsetTop,
+          behavior: "smooth",
+        });
+      }
+  }, []);
 
   return (
     <AppContext.Provider
@@ -60,6 +71,7 @@ function App() {
         <Header
           scrollToSkils={scrollToSkils}
           scrollToPortfolio={scrollToPortfolio}
+          scrollToAbout={scrollToAbout}
         />
         {isShownHome && <HomeContainer scrollToPortfolio={scrollToPortfolio} />}
         {!isLocked && (
@@ -69,6 +81,9 @@ function App() {
               <div ref={portfolioSection}>
                 <PortfolioContainer portfolio={portfolio} />
               </div>
+            </section>
+            <section ref={aboutSection}>
+              <About />
             </section>
             <div ref={skilsSection}>
               <SkilsContainer />

@@ -12,9 +12,10 @@ import { Portfolio } from "context/AppContext.type";
 type THeader = {
   scrollToSkils: () => void;
   scrollToPortfolio: (data: Portfolio) => void;
+  scrollToAbout: () => void;
 };
 
-const Header: FC<THeader> = ({ scrollToSkils, scrollToPortfolio }) => {
+const Header: FC<THeader> = ({ scrollToSkils, scrollToPortfolio, scrollToAbout }) => {
   const { isLocked, portfolio, setPortfolio } = useContext(AppContext);
   return (
     <header className={cn(styles.header, "gradientBg")}>
@@ -25,6 +26,7 @@ const Header: FC<THeader> = ({ scrollToSkils, scrollToPortfolio }) => {
         setPortfolioType={setPortfolio}
         scrollToSkils={scrollToSkils}
         scrollToPortfolio={scrollToPortfolio}
+        scrollToAbout={scrollToAbout}
       />
     </header>
   );

@@ -18,6 +18,7 @@ type TMenu = {
   setPortfolioType: (data: Portfolio) => void;
   scrollToSkils: () => void;
   scrollToPortfolio: (portfolioType: Portfolio) => void;
+  scrollToAbout: () => void;
 };
 
 const Menu: FC<TMenu> = ({
@@ -26,6 +27,7 @@ const Menu: FC<TMenu> = ({
   setPortfolioType,
   scrollToSkils,
   scrollToPortfolio,
+  scrollToAbout,
 }) => {
   const { portfolio } = useContext(AppContext);
 
@@ -61,17 +63,17 @@ const Menu: FC<TMenu> = ({
           )}
           {isLocked ? "Projects" : otherPortfolio}
         </li>
+        <li onClick={scrollToAbout}>
+          {isLocked && (
+            <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
+          )}
+          About
+        </li>
         <li onClick={scrollToSkils}>
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
           Skils
-        </li>
-        <li>
-          {isLocked && (
-            <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
-          )}
-          About
         </li>
         <li>
           <div className={cn(styles.socials)}>
