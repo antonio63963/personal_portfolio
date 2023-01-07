@@ -1,0 +1,57 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  max-width: var(--maxWidth);
+  margin-bottom: 70px;
+}
+
+.avatarContainer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 30px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutText {
+  color: var(--textColor);
+  opacity: .7;
+  text-align: center;
+  max-width: 400px;
+}
+.accentText {
+  color: var(--orangeColor);
+  font-weight: bold;
+}
+
+.titleSecton {
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 30px;
+  font-size: 52px;
+  margin: 0;
+  line-height: 52px;
+}
+
+@media screen and (max-width: 850px) {
+  .titleSection {
+    font-size: 48px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .titleSection {
+    font-size: 36px;
+    line-height: 30px;
+  }
+}

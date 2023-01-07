@@ -5,3 +5,4 @@ export { default as WebPortfolioLayout } from "./WebPortfolioLayout/WebPortfolio
 export { default as MotionPortfolioLayout } from "./MotionPortfolioLayout/MotionPortfolioLayout";
 export { default as MotionItem } from "./MotionPortfolioItem/MotionItem";
 export { default as ButtonLink } from './ButtonLink/ButtonLink';
+export { default as About } from './About/About';
