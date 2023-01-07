@@ -126,7 +126,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
               onClick={catchUpThePhone}
             >
               {isCatchUp ? "Catch Up" : "Hang Up"}
-              <img src={arrowIcon} alt="arrow" />
+              <img className={cn(styles.catchPhone_img)} src={arrowIcon} alt="arrow" />
             </button>
           </div>
         </div>

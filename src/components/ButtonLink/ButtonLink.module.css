@@ -13,11 +13,31 @@
 a {
  text-decoration: none;
 }
-.button>img {
+.btnIcon {
  width: 28px;
  margin-left: 15px;
 }
 .button:hover {
  background: var(--purpleColor);
  letter-spacing: .1em;
+}
+
+@media screen and (max-width: 715px) {
+  .button {
+    font-size: 18px;
+    padding: 7px 16px;
+  }
+  .btnIcon {
+    width: 18px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  .btnIcon {
+    width: 16px;
+  } 
 }

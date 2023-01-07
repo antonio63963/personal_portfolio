@@ -17,7 +17,7 @@ const ButtonLink:FC<TButton> = ({link, img, text}) => {
   >
     <button className={cn("btn", styles.button)}>
       <p>{text}</p>
-      <img src={img} alt="behance" />
+      <img className={cn(styles.btnIcon)} src={img} alt="behance" />
     </button>
   </a>)
 };
