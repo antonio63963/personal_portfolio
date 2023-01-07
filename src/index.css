@@ -40,7 +40,32 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 28px;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
+}
+
+.titleSection {
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 30px;
+  font-size: 52px;
+  margin: 0;
+  line-height: 52px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .titleSection {
+    font-size: 48px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .titleSection {
+    font-size: 36px;
+    line-height: 30px;
+  }
 }

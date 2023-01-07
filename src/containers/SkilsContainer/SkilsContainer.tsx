@@ -7,15 +7,16 @@ import girl from "assets/gifs/girl.gif";
 import hockey from "assets/gifs/hockey.gif";
 
 import styles from "./SkilsContainer.module.css";
+import useElementOnScreen from "hooks/useElementOnScreen";
+
+type TSkils = {
+  onScreen: boolean;
+}
 
 const SkilsContainer: FC = () => {
   const lottieContainer = useRef(null);
+  const onScreen = useElementOnScreen({ref: lottieContainer, rootMargin: '-300px'});
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
-
-  const handleScroll = (event: any) => {
-    console.log('scrollTop: ', event.currentTarget.scrollTop);
-    console.log('offsetHeight: ', event.currentTarget.offsetHeight);
-  };
 
   useEffect(() => {
     if (lottieContainer?.current) {
@@ -23,22 +24,34 @@ const SkilsContainer: FC = () => {
         container: lottieContainer.current,
         renderer: "svg",
         loop: false,
-        autoplay: true,
+        autoplay: false,
         animationData: require("lottie/neo.json"),
       });
       setLottieAnimation(anim);
     }
   }, []);
 
+  useEffect(() => {
+    console.log('Lottie', onScreen);
+    if(onScreen) {
+      lottieAnimation?.setDirection(1);
+      lottieAnimation?.play();
+    } else {
+      lottieAnimation?.setDirection(-1);
+      lottieAnimation?.play();
+    }
+  }, [lottieAnimation, onScreen]);
+
   return (
     <section className={cn(styles.skilsSection)}>
       <h1 className={cn(styles.title, "titleGradient")}>Skils</h1>
-        <div onScroll={handleScroll} className={cn(styles.lottieContainer)} ref={lottieContainer}></div>
+        <div className={cn(styles.lottieContainer)} ref={lottieContainer}></div>
       <div className={cn(styles.skilsRow)}>
         <div className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Motion Design</h3>
           <ul className={cn(styles.listSkils)}>
             <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
             <li>After Effects</li>
             <li>Moho(Anime Studio)</li>
             <li>Characters</li>
@@ -50,11 +63,11 @@ const SkilsContainer: FC = () => {
         <div style={{marginLeft: 'auto'}} className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Fontend</h3>
           <ul className={cn(styles.listSkils)}>
+            <li>Javascript/TS</li>
             <li>Ionic</li>
-            <li>Typescript</li>
             <li>Html5</li>
             <li>Css3</li>
-            <li>React</li>
+            <li>React/Redux</li>
             <li>Angular</li>
           </ul>
         </div>
@@ -62,8 +75,7 @@ const SkilsContainer: FC = () => {
         <div className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Backend</h3>
           <ul className={cn(styles.listSkils)}>
-            <li>Javascript</li>
-            <li>Typescript</li>
+            <li>Javascript/TS</li>
             <li>Node.js</li>
             <li>Express.js</li>
             <li>MongoDB</li>
