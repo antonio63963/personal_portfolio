@@ -25,7 +25,8 @@
 .aboutText {
   color: var(--textColor);
   opacity: .7;
-  text-align: center;
+  text-align: justify;
+  vertical-align: middle;
   max-width: 400px;
 }
 .accentText {
