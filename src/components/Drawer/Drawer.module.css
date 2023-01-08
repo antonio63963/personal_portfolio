@@ -1,0 +1,20 @@
+.container {
+  display: none;
+  position: fixed;
+  background-color: #000;
+  right: -167px;
+  top: 54px;
+  padding: 10px 15px;
+  border-radius: 0 0 0 10px;
+  transition: all .5s ease-in-out;
+}
+
+.active {
+  right: 0;
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    display: block;
+  }
+}

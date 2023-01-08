@@ -23,8 +23,6 @@ type TMenu = {
 
 const Menu: FC<TMenu> = ({
   isLocked,
-  portfolioType,
-  setPortfolioType,
   scrollToSkils,
   scrollToPortfolio,
   scrollToAbout,
@@ -43,12 +41,7 @@ const Menu: FC<TMenu> = ({
 
   return (
     <>
-      <div className={cn(styles.menuMobile)}>
-        <div className={cn(styles.menuMobile_item)}></div>
-        <div className={cn(styles.menuMobile_item)}></div>
-        <div className={cn(styles.menuMobile_item)}></div>
-      </div>
-      <ul className={cn(styles.menuDesk)}>
+      <ul className={cn(styles.menu)}>
         <li
           onClick={
             !isLocked

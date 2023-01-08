@@ -1,4 +1,4 @@
-.menuDesk {
+.menu {
   list-style-type: none;
   display: flex;
   align-items: center;
@@ -13,9 +13,12 @@
 .socialIcon {
   width: 1.5rem;
   margin-left: 15px;
+  opacity: .5;
 }
-.menuDesk > li {
-  opacity: 0.5;
+.socialIcon:hover {
+  opacity: 1;
+}
+.menu > li {
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -25,36 +28,25 @@
   width: 100%;
   transition: opacity 0.5 ease-in-out;
 }
-.menuDesk > li:hover {
+.menu>li:not(:last-child) {
+  opacity: .5;
+}
+.menu > li:not(:last-child):hover {
   opacity: 1;
 }
-.menuDesk > li:hover>img {
+.menu > li:hover>img {
   animation: wiggleLock .3s ease-in-out infinite;
 }
-.menuDesk:last-child {
+.menu:last-child {
   margin-left: 0;
 }
 
-.menuMobile {
-  display: none;
-}
-.menuMobile_item {
-  width: 100%;
-  height: 3px;
-  background-color: var(--textColor);
-}
-
 @media screen and (max-width: 580px) {
-  .menuDesk {
-    display: none;
-  }
-  .menuMobile {
-    display: flex;
+  .menu {
     flex-direction: column;
-    justify-content: space-between;
-    height: 25px;
-    width: 25px;
-    opacity: .7;
+  }
+  .menu>li {
+    margin: 10px;
   }
 }
 

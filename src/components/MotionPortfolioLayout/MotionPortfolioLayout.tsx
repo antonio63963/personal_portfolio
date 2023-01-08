@@ -21,8 +21,8 @@ const MotionPortfolioLayout: FC = () => {
       <div className={cn(styles.motionItemsRow)}>
         <MotionItem cover={devsteamCover} gif={devsteamGif} />
         <MotionItem cover={girlCover} gif={girl} />
-        <MotionItem cover={hockeyCover} gif={hockey} />
         <MotionItem cover={itakaCover} gif={itaka} />
+        <MotionItem cover={hockeyCover} gif={hockey} />
       </div>
 
       <ButtonLink

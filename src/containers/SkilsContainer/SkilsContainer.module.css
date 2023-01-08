@@ -2,6 +2,9 @@
   padding: 0 30px;
   max-width: var(--maxWidth);
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
@@ -13,7 +16,23 @@
   margin: 0;
   line-height: 52px;
 }
-
+.skilCol_content {
+  display: flex;
+  height: 100%;
+}
+.content_img_wrapper {
+  margin-left: 20px;
+  flex-shrink: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.content_img {
+  width: 100px;
+  margin-left: auto;
+  align-self: flex-end;
+  opacity: .5;
+}
 .skilsRow {
   flex-wrap: wrap;
   margin-top: 35px;
@@ -35,6 +54,10 @@
   cursor: pointer;
   transition: all 0.5s ease-in;
 }
+.skilIcon {
+  width: 20px;
+  margin-right: 10px;
+}
 .skilsCol:hover {
   transform: rotate3d(2, 1, 0, 15deg);
 }
@@ -49,8 +72,9 @@
   flex-direction: column;
 }
 .listSkils > li {
+  display: flex;
+  align-items: center;
   list-style-type: none;
-  /* opacity: .7; */
   color: var(--blueTextColor);
   margin: 5px;
   line-height: 1.2rem;

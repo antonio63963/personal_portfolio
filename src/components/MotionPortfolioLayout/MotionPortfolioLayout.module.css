@@ -1,21 +1,8 @@
 .motionItemsRow {
   display: flex;
   align-items: center;
-  justify-content: center;
-flex-wrap: wrap;
-margin-bottom: 50px;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
-.motionItem {
-  flex-grow: 2;
-  min-width: 300px;
-  max-width: 600px;
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 10px;
-}
-.motionItem_image {
-  object-fit: cover;
-  width: 100%; height: 100%;
-}

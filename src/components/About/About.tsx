@@ -12,15 +12,17 @@ const About: FC = () => {
         <img className={cn(styles.avatar)} src={avatar} alt="avatar" />
       </div>
       <p className={cn(styles.aboutText)}>
+        Hi! My name is Anton Fomin.
         I'm a web developer who switched from Motion Design. I have an
-        experience with fixing bugs on: 
-        <br />
+        experience with {''}  
+        {/* <br /> */}
         <span className={cn(styles.accentText)}>
-          Angular and writing fullstack app on Ionic, React.js, Node.js,
-          Express.js, MongoDB/Mongoose
+         fixing bugs on Angular and writing fullstack app on Ionic, React.js, Node.js,
+          Express.js, MongoDB, Mongoose
         </span>
         .
-        <br /> Currently, when I have time, I write a mobile app for car
+        {/* <br />  */}
+        Currently, when I have time, I write a mobile app for car
         mechanics with Flutter.
       </p>
     </div>
