@@ -1,4 +1,4 @@
-import { FC, RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 type THook = {
   ref: RefObject<Element>;
@@ -6,18 +6,17 @@ type THook = {
 }
 
 const useElementOnScreen = (
-  {ref, rootMargin = "0px",}: THook
+  {ref, rootMargin = "-100px",}: THook
   
 ): boolean => {
   const [isIntersecting, setIsIntersecting] = useState(true);
   useEffect(() => {
-    console.log('Hook: ', ref)
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
       },
       { rootMargin }
-    );
+      );
   if (ref.current) {
     observer.observe(ref.current);
   }
@@ -26,7 +25,7 @@ const useElementOnScreen = (
       observer.unobserve(ref.current);
     }
   };
-}, [ref, rootMargin]);
+}, [rootMargin, ref]);
   return isIntersecting;
 };
 

@@ -22,14 +22,8 @@ const SkilsContainer: FC = () => {
   const lottieContainer = useRef(null);
   const onScreen = useElementOnScreen({
     ref: lottieContainer,
-    rootMargin: "-300px",
   });
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
-
-  function getWindowSize() {
-    const {innerWidth, innerHeight} = window;
-    return {innerWidth, innerHeight};
-  }
 
   useEffect(() => {
     if (lottieContainer?.current) {
@@ -44,15 +38,6 @@ const SkilsContainer: FC = () => {
     }
   }, []);
 
-  function onResizeHandler() {
-    console.log('UHHH', getWindowSize())
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", onResizeHandler);
-    return window.removeEventListener("resize", onResizeHandler);
-  }, [onResizeHandler]);
-
   useEffect(() => {
     console.log("Lottie", onScreen);
     if (onScreen) {
@@ -62,7 +47,7 @@ const SkilsContainer: FC = () => {
       lottieAnimation?.setDirection(-1);
       lottieAnimation?.play();
     }
-  }, [lottieAnimation, onResizeHandler, onScreen]);
+  }, [lottieAnimation, onScreen]);
 
   return (
     <section className={cn(styles.skilsSection)}>
