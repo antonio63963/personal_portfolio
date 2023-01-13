@@ -25,15 +25,26 @@ const Header: FC<THeader> = ({
 
   return (
     <header className={cn(styles.header, "gradientBg")}>
-      <img className={cn(styles.headerImg)} src={logo} alt="logo" />
-
-      <div className={cn(styles.burger)} onClick={() => setIsActive(!isActive)}>
-        <div className={cn(styles.burger_item, `${isActive && styles.active}`)}></div>
-        {/* <div className={cn(styles.burger_item, styles.burger_item_middle)}></div>
-        <div className={cn(styles.burger_item, styles.burger_item_bottom)}></div> */}
-      </div>
-      <div className={cn(styles.desktop)}>
-        <Menu
+      <div className={cn(styles.contentSize)}>
+        <img className={cn(styles.headerImg)} src={logo} alt="logo" />
+        
+        <div className={cn(styles.burger)} onClick={() => setIsActive(!isActive)}>
+          <div className={cn(styles.burger_item, `${isActive && styles.active}`)}></div>
+          {/* <div className={cn(styles.burger_item, styles.burger_item_middle)}></div>
+          <div className={cn(styles.burger_item, styles.burger_item_bottom)}></div> */}
+        </div>
+        <div className={cn(styles.desktop)}>
+          <Menu
+            isLocked={isLocked}
+            portfolioType={portfolio}
+            setPortfolioType={setPortfolio}
+            scrollToSkils={scrollToSkils}
+            scrollToPortfolio={scrollToPortfolio}
+            scrollToAbout={scrollToAbout}
+          />
+        </div>
+        <Drawer
+          isActive={isActive}
           isLocked={isLocked}
           portfolioType={portfolio}
           setPortfolioType={setPortfolio}
@@ -42,15 +53,6 @@ const Header: FC<THeader> = ({
           scrollToAbout={scrollToAbout}
         />
       </div>
-      <Drawer
-        isActive={isActive}
-        isLocked={isLocked}
-        portfolioType={portfolio}
-        setPortfolioType={setPortfolio}
-        scrollToSkils={scrollToSkils}
-        scrollToPortfolio={scrollToPortfolio}
-        scrollToAbout={scrollToAbout}
-      />
     </header>
   );
 };
