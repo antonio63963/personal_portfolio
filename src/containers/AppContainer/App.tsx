@@ -8,7 +8,7 @@ import { HomeContainer } from "containers";
 import Underground from "components/Underground/Underground";
 import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer";
 import { Portfolio } from "context/AppContext.type";
-import SkilsContainer from "containers/SkilsContainer/SkilsContainer";
+import SkilsContainer from "containers/SkillsContainer/SkillsContainer";
 import Footer from "components/Footer/Footer";
 import useElementOnScreen from "hooks/useElementOnScreen";
 

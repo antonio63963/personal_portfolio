@@ -51,7 +51,7 @@ const SkilsContainer: FC = () => {
 
   return (
     <section className={cn(styles.skilsSection)}>
-      <h1 className={cn(styles.title, "titleGradient")}>Skils</h1>
+      <h1 className={cn(styles.title, "titleGradient")}>Skills</h1>
       <div className={cn(styles.lottieContainer)} ref={lottieContainer}></div>
       <div className={cn(styles.skilsRow)}>
         <div className={cn(styles.skilsCol, "gradientBg")}>
