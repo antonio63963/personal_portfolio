@@ -45,7 +45,6 @@ a {
 @media screen and (max-width: 580px) {
   .button {
     font-size: 16px;
-    padding: 5px 10px;
   }
   .btnIcon {
     width: 16px;

@@ -50,9 +50,9 @@ function App() {
       }
   }, []);
   const scrollToAbout = useCallback(() => {
-      if (skilsSection.current) {
+      if (aboutSection.current) {
         window.scrollTo({
-          top: skilsSection.current.offsetTop,
+          top: aboutSection.current.offsetTop,
           behavior: "smooth",
         });
       }
@@ -82,12 +82,12 @@ function App() {
                 <PortfolioContainer portfolio={portfolio} />
               </div>
             </section>
-            <section ref={aboutSection}>
-              <About />
-            </section>
             <div ref={skilsSection}>
               <SkilsContainer />
             </div>
+            <section ref={aboutSection}>
+              <About />
+            </section>
             <Footer />
           </>
         )}
