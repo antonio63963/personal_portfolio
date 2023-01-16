@@ -1,0 +1,34 @@
+.bg {
+  position: absolute;
+  z-index: 800;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.imageContainer {
+  position: fixed;
+  z-index: 9999;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--textColor);
+  min-width: 300px;
+  /* max-width: 300px; */
+}
+
+.close {
+  margin-bottom: 10px;
+}
+
+.image {
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  object-fit: contain;
+}

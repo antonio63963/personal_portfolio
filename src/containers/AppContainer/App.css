@@ -6,7 +6,6 @@
   min-height: 100vh;
   background: var(--bgColor);
   color: var(--textColor);
-  /* overflow: hidden; */
   
   display: flex;
   flex-direction: column;

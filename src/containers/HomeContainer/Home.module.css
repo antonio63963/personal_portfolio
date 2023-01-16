@@ -172,5 +172,6 @@
   }
  .contentAlign {
   flex-direction: column;
+  justify-content: start;
  }
 }

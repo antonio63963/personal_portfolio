@@ -37,6 +37,9 @@
 .menu > li:hover>img {
   animation: wiggleLock .3s ease-in-out infinite;
 }
+.menu > li:hover>img {
+  animation: wiggleLock .3s ease-in-out infinite;
+}
 .menu:last-child {
   margin-left: 0;
 }

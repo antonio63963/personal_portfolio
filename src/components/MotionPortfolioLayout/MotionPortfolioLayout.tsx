@@ -31,20 +31,20 @@ const MotionPortfolioLayout: FC = () => {
          isLong={!isLong}
          setIsLong={setIsLong}
          description="A sample from ad animation video for hockey merch."
-         targetLink="#"
          projectLogo={myLogo}
          bgItem={hockeyCover}
          techList={[ae, ai]}
+         gif={hockey}
        />
        <div style={{ width: "50px" }}></div>
        <PortfolioItem
          isLong={isLong}
          setIsLong={setIsLong}
          description="Add video clothes for children"
-         targetLink="https://antonio63963.github.io/eyeTracker/"
          projectLogo={myLogo}
          bgItem={girlCover}
          techList={[ai, moho]}
+         gif={girl}
        />
      </div>
     <div style={{height: '35px'}}></div>
@@ -54,20 +54,20 @@ const MotionPortfolioLayout: FC = () => {
          isLong={isLong}
          setIsLong={setIsLong}
          description="A logo animation"
-         targetLink="#"
          projectLogo={myLogo}
          bgItem={devsteamCover}
          techList={[ae, ai]}
+         gif={devsteamGif}
        />
        <div style={{ width: "50px" }}></div>
        <PortfolioItem
          isLong={!isLong}
          setIsLong={setIsLong}
          description="Ad video for beach club"
-         targetLink="https://antonio63963.github.io/eyeTracker/"
          projectLogo={myLogo}
          bgItem={itakaCover}
          techList={[ai, moho]}
+         gif={itaka}
        />
      </div>
      <ButtonLink
