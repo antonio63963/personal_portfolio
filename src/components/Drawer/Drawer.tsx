@@ -13,6 +13,7 @@ type TDrawer = {
   scrollToSkils: () => void;
   scrollToPortfolio: (portfolioType: Portfolio) => void;
   scrollToAbout: () => void;
+  onClose: () => void;
 };
 
 const Drawer: FC<TDrawer> = ({
@@ -23,6 +24,7 @@ const Drawer: FC<TDrawer> = ({
   scrollToSkils,
   scrollToPortfolio,
   scrollToAbout,
+  onClose,
 }) => {
   return (
     <div className={cn(styles.container, `${isActive ? styles.active : null}`)}>
@@ -33,6 +35,7 @@ const Drawer: FC<TDrawer> = ({
         scrollToSkils={scrollToSkils}
         scrollToPortfolio={scrollToPortfolio}
         scrollToAbout={scrollToAbout}
+        onClose={onClose}
       />
     </div>
   );

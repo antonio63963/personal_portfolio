@@ -27,11 +27,14 @@ const Header: FC<THeader> = ({
     <header className={cn(styles.header, "gradientBg")}>
       <div className={cn(styles.contentSize)}>
         <img className={cn(styles.headerImg)} src={logo} alt="logo" />
-        
-        <div className={cn(styles.burger)} onClick={() => setIsActive(!isActive)}>
-          <div className={cn(styles.burger_item, `${isActive && styles.active}`)}></div>
-          {/* <div className={cn(styles.burger_item, styles.burger_item_middle)}></div>
-          <div className={cn(styles.burger_item, styles.burger_item_bottom)}></div> */}
+
+        <div
+          className={cn(styles.burger)}
+          onClick={() => setIsActive(!isActive)}
+        >
+          <div
+            className={cn(styles.burger_item, `${isActive && styles.active}`)}
+          ></div>
         </div>
         <div className={cn(styles.desktop)}>
           <Menu
@@ -41,9 +44,11 @@ const Header: FC<THeader> = ({
             scrollToSkils={scrollToSkils}
             scrollToPortfolio={scrollToPortfolio}
             scrollToAbout={scrollToAbout}
+            onClose={() => setIsActive(false)}
           />
         </div>
         <Drawer
+          onClose={() => setIsActive(false)}
           isActive={isActive}
           isLocked={isLocked}
           portfolioType={portfolio}
