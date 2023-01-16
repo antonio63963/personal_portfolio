@@ -9,7 +9,7 @@ type TItem = {
   setIsLong: (data: boolean) => void;
   description: string;
   targetLink: string;
-  githubLink: string;
+  githubLink?: string;
   projectLogo: string;
   bgItem: string;
   techList: string[];
@@ -54,16 +54,18 @@ const PortfolioItem: FC<TItem> = ({
             www...
           </a>
           <p>{description}</p>
-          <div className={cn(styles.githubRow)}>
-            <a target="_blank" href={githubLink} rel="noreferrer">
-              <img
-                src={githubIcon}
-                className={cn(styles.githubIcon)}
-                alt="github"
-              />
-            </a>
-            <p>Github repo</p>
-          </div>
+          {githubLink ? (
+            <div className={cn(styles.githubRow)}>
+              <a target="_blank" href={githubLink} rel="noreferrer">
+                <img
+                  src={githubIcon}
+                  className={cn(styles.githubIcon)}
+                  alt="github"
+                />
+              </a>
+              <p>Github repo</p>
+            </div>
+          ) : null}
 
           <ul className={cn(styles.projectInfo_list)}>
             {techList.map((tech, index) => {

@@ -3,17 +3,26 @@
   flex-direction: column;
   width: 100%;
   max-width: 1200px;
-  /* height: 100vh; */
   padding-top: 100px;
-  color: #fff;
+  color: var(--textColor);
   padding: 108px 30px;
+  transition: all 1s ease-in-out;
 }
+
 .title {
   text-align: center;
   line-height: 100px;
   margin-bottom: 30px;
   font-size: 52px;
   color: var(--textColor);
+}
+
+.sliderContainer {
+  display: flex;
+}
+
+.container.motionPortfolio {
+  transform: position(-100%, 0)
 }
 
 @media screen and (max-width: 850px) {
@@ -32,9 +41,9 @@
     line-height: 40px;
   }
 }
+
 @media screen and (max-width: 580px) {
   .container {
     padding: 64px 10px
   }
 }
-
