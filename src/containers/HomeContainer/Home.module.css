@@ -48,7 +48,7 @@
 }
 .catchPhone_btn:hover {
   background: var(--purpleColor);
-  letter-spacing: .1em;
+  /* letter-spacing: .1em; */
 }
 .catchPhone_btn:hover>img {
   animation: arrowMoving .3s ease-in-out infinite;
@@ -164,8 +164,8 @@
   }
   .catchPhone_btn {
     margin-top: 25px;
-    font-size: 16px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 7px 12px;
   }
   .catchPhone_img {
     width: 16px;

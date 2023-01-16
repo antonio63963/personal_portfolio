@@ -13,7 +13,8 @@ import AppContext from "context/AppContext";
 import styles from "./Home.module.css";
 import { Portfolio } from "context/AppContext.type";
 
-import arrowIcon from 'assets/icons/arrow.svg';
+import arrowIcon from "assets/icons/arrow.svg";
+import { ButtonLink } from "components";
 
 type HomeProps = {
   scrollToPortfolio: (data: Portfolio) => void;
@@ -121,13 +122,11 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
           </p>
 
           <div>
-            <button
-              className={cn("btn", styles.catchPhone_btn)}
+            <ButtonLink
+              text={isCatchUp ? "Catch Up" : "Hang Up"}
+              img={arrowIcon}
               onClick={catchUpThePhone}
-            >
-              {isCatchUp ? "Catch Up" : "Hang Up"}
-              <img className={cn(styles.catchPhone_img)} src={arrowIcon} alt="arrow" />
-            </button>
+            />
           </div>
         </div>
         <div className={cn(styles.col_lottie)}>
