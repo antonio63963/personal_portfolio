@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal_portfolio/static/css/main.f9d316c5.css",
-    "main.js": "/personal_portfolio/static/js/main.3608b721.js",
+    "main.css": "/personal_portfolio/static/css/main.8596e404.css",
+    "main.js": "/personal_portfolio/static/js/main.47ad8e2c.js",
     "static/js/787.a351fc42.chunk.js": "/personal_portfolio/static/js/787.a351fc42.chunk.js",
     "static/media/itaka.gif": "/personal_portfolio/static/media/itaka.feea3f2781705a57da00.gif",
     "static/media/hockey.gif": "/personal_portfolio/static/media/hockey.9b697bc71030f8597bc8.gif",
@@ -42,12 +42,12 @@
     "static/media/tailwind.svg": "/personal_portfolio/static/media/tailwind.d84a6f369e7170891c4a19587ccf78e1.svg",
     "static/media/arrow.svg": "/personal_portfolio/static/media/arrow.951c582e085b06e1dc7be61fa16cd574.svg",
     "static/media/css3.svg": "/personal_portfolio/static/media/css3.12960a52c3cf3c5d2e89739bc5a6e336.svg",
-    "main.f9d316c5.css.map": "/personal_portfolio/static/css/main.f9d316c5.css.map",
-    "main.3608b721.js.map": "/personal_portfolio/static/js/main.3608b721.js.map",
+    "main.8596e404.css.map": "/personal_portfolio/static/css/main.8596e404.css.map",
+    "main.47ad8e2c.js.map": "/personal_portfolio/static/js/main.47ad8e2c.js.map",
     "787.a351fc42.chunk.js.map": "/personal_portfolio/static/js/787.a351fc42.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9d316c5.css",
-    "static/js/main.3608b721.js"
+    "static/css/main.8596e404.css",
+    "static/js/main.47ad8e2c.js"
   ]
 }
