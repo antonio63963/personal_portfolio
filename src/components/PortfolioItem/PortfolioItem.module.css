@@ -17,10 +17,11 @@
   display: flex;
   overflow: hidden;
   border-radius: 10px;
-
-  -webkit-box-shadow: 2px 2px 10px 0px rgba(200, 230, 201, 1);
-  -moz-box-shadow: 2px 2px 10px 0px rgba(200, 230, 201, 1);
-  box-shadow: 2px 2px 10px 0px rgba(200, 230, 201, 1);
+}
+.project:hover {
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+  -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+  box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
 }
 
 .project:hover > .projectImage {

@@ -117,8 +117,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
             Welcome To My Personal Portpholio
           </h1>
           <p className={cn(styles.description)}>
-            Hi, my name is Anton Fomin. I'm a motion designer, animator who
-            switched to web development. So fill free to pick up the handset...
+            Hi, my name is Anton Fomin. I'm a front-end developer with motion design, animation skills. So fill free to pick up the handset...
           </p>
 
           <div>

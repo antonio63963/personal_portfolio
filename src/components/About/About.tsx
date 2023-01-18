@@ -7,22 +7,35 @@ import avatar from "assets/photo2.jpg";
 const About: FC = () => {
   return (
     <div className={cn(styles.aboutContainer)}>
-      <h1 className={cn("titleSection", "titleGradient")}>About</h1>
+      <h1 className={cn("titleSection", "titleGradient")}>About me</h1>
       <div className={cn(styles.avatarContainer)}>
         <img className={cn(styles.avatar)} src={avatar} alt="avatar" />
       </div>
       <p className={cn(styles.aboutText)}>
         Hi! My name is Anton Fomin.
-        I'm a web developer who switched from Motion Design. I have an
+        I'm a front-end developer who have motion design skills. I have an
+        experience with {''}  
+        <span className={cn(styles.accentText)}>
+         Angular.js, React.js, Ionic, Node.js,
+          Express.js, MongoDB, Mongoose
+        </span>
+        . {' '}
+        Currently, when I have time, I write a mobile app for car
+        mechanics with Flutter.
+      </p>
+      <p style={{marginTop: '10px'}} className={cn(styles.aboutText)}>In this site I implemented motion design with After Effects and Lottie player. The purpose was creating complex controllable animation with javascript and make the site a little bit fun).</p>
+      {/* <p className={cn(styles.aboutText)}>
+        Hi! My name is Anton Fomin.
+        I'm a front-end developer who have motion design skills. I have an
         experience with {''}  
         <span className={cn(styles.accentText)}>
          fixing bugs on Angular and writing fullstack app on Ionic, React.js, Node.js,
           Express.js, MongoDB, Mongoose
         </span>
-        . {''}
+        . {' '}
         Currently, when I have time, I write a mobile app for car
         mechanics with Flutter.
-      </p>
+      </p> */}
     </div>
   );
 };
