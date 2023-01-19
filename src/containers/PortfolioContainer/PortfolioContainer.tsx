@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 
 import cn from "classnames";
 import styles from "./Portfolio.module.css";

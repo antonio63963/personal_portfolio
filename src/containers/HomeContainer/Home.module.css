@@ -12,6 +12,10 @@
   margin-bottom: 50px;
 }
 
+.notLockedApp {
+  height: 100%;
+}
+
 .col_text {
   display: flex;
   flex-direction: column;

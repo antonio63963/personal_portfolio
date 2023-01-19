@@ -10,12 +10,14 @@ import logo from "assets/logo_web.png";
 import { Portfolio } from "context/AppContext.type";
 
 type THeader = {
+  scrollToHome: () => void;
   scrollToSkils: () => void;
   scrollToPortfolio: (data: Portfolio) => void;
   scrollToAbout: () => void;
 };
 
 const Header: FC<THeader> = ({
+  scrollToHome,
   scrollToSkils,
   scrollToPortfolio,
   scrollToAbout,
@@ -26,7 +28,7 @@ const Header: FC<THeader> = ({
   return (
     <header className={cn(styles.header, "gradientBg")}>
       <div className={cn(styles.contentSize)}>
-        <img className={cn(styles.headerImg)} src={logo} alt="logo" />
+        <img onClick={scrollToHome} className={cn(styles.headerImg)} src={logo} alt="logo" />
 
         <div
           className={cn(styles.burger)}

@@ -21,13 +21,14 @@ type HomeProps = {
 };
 
 const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
-  const { setIsLocked } = useContext(AppContext);
+  const { isLocked, setPortfolio } = useContext(AppContext);
   const lottieContainer = useRef(null);
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
   const [animDirection, setAnimDirection] = useState<number>(1);
   const [isCatchUp, setIsCatchUp] = useState<boolean>(true);
   const [isMorpheusBtnActive, setIsMorpheusBtnActive] =
     useState<boolean>(false);
+  const [isPagesUploaded, setIsPagesUploaded] = useState<boolean>(false);
 
   const catchUpThePhone = useCallback(() => {
     if (!lottieAnimation || animDirection === 0) return;
@@ -77,17 +78,29 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
 
   const onPortfolioClick = useCallback(
     (portfolio: Portfolio) => {
+      console.log("Click");
       if (lottieAnimation && isMorpheusBtnActive) {
-        setIsMorpheusBtnActive(false);
-        lottieAnimation.playSegments([130, 200], true);
-        lottieAnimation.addEventListener("complete", () => {
-          setIsMorpheusBtnActive(false); // withot this double code on last second on scroll down the Morpheus will be visible
-          setIsLocked(false);
+        //  setIsMorpheusBtnActive(false);
+        if (isLocked) {
+          lottieAnimation.playSegments([130, 200], true);
+          const onScroll = () => {
+            scrollToPortfolio(portfolio);
+            setIsPagesUploaded(true);
+            lottieAnimation.removeEventListener('complete', onScroll);
+          };
+          lottieAnimation.addEventListener("complete", onScroll);
+        } else {
           scrollToPortfolio(portfolio);
-        });
+        }
+        // lottieAnimation.addEventListener("complete", () => {
+        //   setIsMorpheusBtnActive(false); // withot this double code on last second on scroll down the Morpheus will be visible
+        //   setIsLocked(false);
+        //   scrollToPortfolio(portfolio);
+        //   setIsPagesUploaded(true);
+        // });
       }
     },
-    [isMorpheusBtnActive, lottieAnimation, scrollToPortfolio, setIsLocked]
+    [isLocked, isMorpheusBtnActive, lottieAnimation, scrollToPortfolio]
   );
 
   useEffect(() => {
@@ -110,14 +123,17 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
   }, [lottieAnimation]);
 
   return (
-    <section className={cn(styles.home)}>
+    <section
+      className={cn(styles.home, `${isPagesUploaded && styles.notLockedApp}`)}
+    >
       <div className={cn(styles.contentAlign)}>
         <div className={cn(styles.col_text)}>
           <h1 className={cn(styles.title, "titleGradient")}>
             Welcome To My Personal Portpholio
           </h1>
           <p className={cn(styles.description)}>
-            Hi, my name is Anton Fomin. I'm a front-end developer with motion design, animation skills. So fill free to pick up the handset...
+            Hi, my name is Anton Fomin. I'm a front-end developer with motion
+            design, animation skills. So fill free to pick up the handset...
           </p>
 
           <div>

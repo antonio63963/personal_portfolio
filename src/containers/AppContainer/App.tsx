@@ -10,21 +10,26 @@ import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer
 import { Portfolio } from "context/AppContext.type";
 import SkilsContainer from "containers/SkillsContainer/SkillsContainer";
 import Footer from "components/Footer/Footer";
-import useElementOnScreen from "hooks/useElementOnScreen";
 
 function App() {
   const portfolioSection = useRef<HTMLDivElement>(null);
   const skilsSection = useRef<HTMLDivElement>(null);
   const aboutSection = useRef<HTMLDivElement>(null);
+  const homeSection = useRef<HTMLDivElement>(null);
 
   const [isShownHome, setIsShownHome] = useState<boolean>(true);
   const [isLocked, setIsLocked] = useState<boolean>(true);
+  const [isUnderground, setIsUnderground] = useState<boolean>(false);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
 
   const scrollToPortfolio = useCallback((portfolio: Portfolio) => {
+    if(isLocked) {
+      setIsUnderground(true);
+      setIsLocked(false);
+    };
     setPortfolio(portfolio);
-    let markerTimerScroll = false;
-    const timerScroll = setInterval(() => {
+    const timerScroll = setTimeout(() => {
+      let markerTimerScroll = false;
       if (portfolioSection.current && !markerTimerScroll) {
         markerTimerScroll = true;
         window.scrollTo({
@@ -32,14 +37,33 @@ function App() {
           behavior: "smooth",
         });
         let timerDeleteHome = setTimeout(() => {
-          setIsShownHome(false);
+          // setIsShownHome(false);
+          setIsUnderground(false);
+          clearTimeout(timerScroll);
           clearTimeout(timerDeleteHome);
+          // console.log(timerScroll)
         }, 1000);
       } else {
-        clearInterval(timerScroll);
       }
     }, 100);
-  }, []);
+  }, [isLocked]);
+
+  const scrollToHome = useCallback(() => {
+    const timerScroll = setTimeout(() => {
+      if(homeSection.current) {
+        window.scrollTo({
+          top: homeSection.current.offsetTop,
+          behavior: "smooth",
+        });
+        let timerDeleteHome = setTimeout(() => {
+          // setIsShownHome(false);
+          // setIsUnderground(false);
+          clearTimeout(timerDeleteHome);
+          clearTimeout(timerScroll);
+        }, 1500);
+      }
+    }, 100)
+  }, [])
 
   const scrollToSkils = useCallback(() => {
       if (skilsSection.current) {
@@ -69,25 +93,28 @@ function App() {
     >
       <div className="App">
         <Header
+        scrollToHome={scrollToHome}
           scrollToSkils={scrollToSkils}
           scrollToPortfolio={scrollToPortfolio}
           scrollToAbout={scrollToAbout}
         />
-        {isShownHome && <HomeContainer scrollToPortfolio={scrollToPortfolio} />}
+        {isShownHome && <div ref={homeSection}>
+          <HomeContainer scrollToPortfolio={scrollToPortfolio} />
+        </div>}
         {!isLocked && (
           <>
             <section className="sectionPortfolio">
-              {isShownHome && <Underground />}
+              {isUnderground && <Underground />}
               <div ref={portfolioSection}>
                 <PortfolioContainer portfolio={portfolio} />
               </div>
             </section>
-            <div ref={skilsSection}>
-              <SkilsContainer />
-            </div>
             <section ref={aboutSection}>
               <About />
             </section>
+            <div ref={skilsSection}>
+              <SkilsContainer />
+            </div>
             <Footer />
           </>
         )}
