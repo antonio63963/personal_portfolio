@@ -9,7 +9,7 @@
   justify-content: space-between;
   height: calc(100vh - 50px);
   /* transform: translateY(-100%) !important; */
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .notLockedApp {
