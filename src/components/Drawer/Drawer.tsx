@@ -29,8 +29,6 @@ const Drawer: FC<TDrawer> = ({
   return (
     <div className={cn(styles.container, `${isActive ? styles.active : null}`)}>
       <Menu
-        isLocked={isLocked}
-        portfolioType={portfolioType}
         setPortfolioType={setPortfolioType}
         scrollToSkils={scrollToSkils}
         scrollToPortfolio={scrollToPortfolio}

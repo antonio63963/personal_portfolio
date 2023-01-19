@@ -28,6 +28,9 @@
   width: 100%;
   transition: opacity 0.5 ease-in-out;
 }
+.notActiveLink {
+  opacity: .5;
+}
 .menu>li:not(:last-child) {
   opacity: .5;
 }
@@ -42,6 +45,15 @@
 }
 .menu:last-child {
   margin-left: 0;
+}
+
+.menu>li.activeMenu {
+  opacity: 1;
+  color: var(--blueTextColor);
+  font-weight: bold;
+}
+.menu>li.activeMenu::after {
+ 
 }
 
 @media screen and (max-width: 580px) {

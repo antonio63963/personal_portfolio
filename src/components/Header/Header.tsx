@@ -38,8 +38,6 @@ const Header: FC<THeader> = ({
         </div>
         <div className={cn(styles.desktop)}>
           <Menu
-            isLocked={isLocked}
-            portfolioType={portfolio}
             setPortfolioType={setPortfolio}
             scrollToSkils={scrollToSkils}
             scrollToPortfolio={scrollToPortfolio}

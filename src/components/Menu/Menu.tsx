@@ -13,8 +13,6 @@ import linkedin from "assets/icons/linkedin.svg";
 import { Portfolio } from "context/AppContext.type";
 
 type TMenu = {
-  isLocked: boolean;
-  portfolioType: Portfolio;
   setPortfolioType: (data: Portfolio) => void;
   scrollToSkils: () => void;
   scrollToPortfolio: (portfolioType: Portfolio) => void;
@@ -23,32 +21,22 @@ type TMenu = {
 };
 
 const Menu: FC<TMenu> = ({
-  isLocked,
   scrollToSkils,
   scrollToPortfolio,
   scrollToAbout,
   onClose,
 }) => {
-  const { portfolio } = useContext(AppContext);
-
-  const [otherPortfolio, setOtherPortfolio] = useState<Portfolio>(
-    portfolio === Portfolio.motion ? Portfolio.web : Portfolio.motion
-  );
-
-  useEffect(() => {
-    setOtherPortfolio(
-      portfolio === Portfolio.motion ? Portfolio.web : Portfolio.motion
-    );
-  }, [portfolio]);
+  const { portfolio, isLocked } = useContext(AppContext);
 
   return (
     <>
       <ul className={cn(styles.menu)}>
         <li
+        className={cn(`${portfolio === Portfolio.web && !isLocked && styles.activeMenu}`, styles.notActiveLink)}
           onClick={
             !isLocked
               ? () => {
-                  scrollToPortfolio(otherPortfolio);
+                  scrollToPortfolio(Portfolio.web);
                   onClose && onClose();
                 }
               : () => {}
@@ -57,9 +45,26 @@ const Menu: FC<TMenu> = ({
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
-          {isLocked ? "Projects" : otherPortfolio}
+         Web Projects
         </li>
-        <li onClick={() => {
+        <li className={cn(`${portfolio === Portfolio.motion && !isLocked && styles.activeMenu}`, styles.notActiveLink)}
+          onClick={
+            !isLocked
+              ? () => {
+                  scrollToPortfolio(Portfolio.motion);
+                  onClose && onClose();
+                }
+              : () => {}
+          }
+        >
+          {isLocked && (
+            <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
+          )}
+         Motion Projects
+        </li>
+
+
+        <li className={cn(styles.notActiveLink)} onClick={() => {
           scrollToAbout();
           onClose && onClose();
         }}>
@@ -68,7 +73,7 @@ const Menu: FC<TMenu> = ({
           )}
           About
         </li>
-        <li onClick={() => {
+        <li className={cn(styles.notActiveLink)} onClick={() => {
           scrollToSkils();
           onClose && onClose();
         }}>
