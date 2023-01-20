@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/personal_portfolio/static/css/main.63805959.css",
-    "main.js": "/personal_portfolio/static/js/main.d91b9f28.js",
+    "main.js": "/personal_portfolio/static/js/main.2d6bbb8c.js",
     "static/js/787.a351fc42.chunk.js": "/personal_portfolio/static/js/787.a351fc42.chunk.js",
     "static/media/itaka.gif": "/personal_portfolio/static/media/itaka.feea3f2781705a57da00.gif",
     "static/media/hockey.gif": "/personal_portfolio/static/media/hockey.9b697bc71030f8597bc8.gif",
-    "static/media/novohoodonosor.gif": "/personal_portfolio/static/media/novohoodonosor.3603471d2cc387475277.gif",
     "static/media/girl.gif": "/personal_portfolio/static/media/girl.49db76c914f474e96626.gif",
     "static/media/devsteam.gif": "/personal_portfolio/static/media/devsteam.76efc454bd6c174a4de2.gif",
+    "static/media/novohoodonosor.gif": "/personal_portfolio/static/media/novohoodonosor.3e9baa03e8a0ca10ab8e.gif",
     "static/media/camo.png": "/personal_portfolio/static/media/camo.25f1cbb6af4f1e395d08.png",
     "static/media/itakaCover.png": "/personal_portfolio/static/media/itakaCover.8efcf1949afc6cf2e53f.png",
     "static/media/girlCover.png": "/personal_portfolio/static/media/girlCover.6c6c353deca1b376692e.png",
@@ -45,11 +45,11 @@
     "static/media/arrow.svg": "/personal_portfolio/static/media/arrow.951c582e085b06e1dc7be61fa16cd574.svg",
     "static/media/css3.svg": "/personal_portfolio/static/media/css3.12960a52c3cf3c5d2e89739bc5a6e336.svg",
     "main.63805959.css.map": "/personal_portfolio/static/css/main.63805959.css.map",
-    "main.d91b9f28.js.map": "/personal_portfolio/static/js/main.d91b9f28.js.map",
+    "main.2d6bbb8c.js.map": "/personal_portfolio/static/js/main.2d6bbb8c.js.map",
     "787.a351fc42.chunk.js.map": "/personal_portfolio/static/js/787.a351fc42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.63805959.css",
-    "static/js/main.d91b9f28.js"
+    "static/js/main.2d6bbb8c.js"
   ]
 }
