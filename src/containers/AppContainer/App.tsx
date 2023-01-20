@@ -10,6 +10,7 @@ import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer
 import { Portfolio } from "context/AppContext.type";
 import SkilsContainer from "containers/SkillsContainer/SkillsContainer";
 import Footer from "components/Footer/Footer";
+import Novohoodonosor from "components/Novohoodonosor/Novohoodonosor";
 
 function App() {
   const portfolioSection = useRef<HTMLDivElement>(null);
@@ -115,6 +116,7 @@ function App() {
             <div ref={skilsSection}>
               <SkilsContainer />
             </div>
+            <Novohoodonosor />
             <Footer />
           </>
         )}

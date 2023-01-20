@@ -4,7 +4,7 @@
   height: 100%;
   max-width: var(--maxWidth);
   min-height: 100vh;
-  background: var(--bgColor);
+  background-color: var(--bgColor);
   color: var(--textColor);
   
   display: flex;
