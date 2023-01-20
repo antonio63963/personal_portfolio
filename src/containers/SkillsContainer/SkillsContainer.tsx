@@ -5,6 +5,7 @@ import cn from "classnames";
 import frontendIcon from "assets/icons/frontendIcon.svg";
 import backendIcon from "assets/icons/backendIcon.svg";
 import motionIcon from "assets/icons/motionIcon.svg";
+import mobileIcon from "assets/icons/mobileIcon.svg";
 
 import aeIcon from "assets/icons/ae.svg";
 import aiIcon from "assets/icons/ai.svg";
@@ -39,7 +40,6 @@ const SkilsContainer: FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log("Lottie", onScreen);
     if (onScreen) {
       lottieAnimation?.setDirection(1);
       lottieAnimation?.play();
@@ -54,44 +54,6 @@ const SkilsContainer: FC = () => {
       <h1 className={cn(styles.title, "titleGradient")}>Skills</h1>
       <div className={cn(styles.lottieContainer)} ref={lottieContainer}></div>
       <div className={cn(styles.skilsRow)}>
-        <div className={cn(styles.skilsCol, "gradientBg")}>
-          <h3 className={cn(styles.skilCol_title, "titleGradient")}>
-            Motion Design
-          </h3>
-          <div className={cn(styles.skilCol_content)}>
-            <ul className={cn(styles.listSkils)}>
-              <li>
-                {/* <img className={cn(styles.skilIcon)} src={aiIcon} alt="ai" />{" "} */}
-                Adobe Illustrator
-              </li>
-              <li>Adobe Photoshop</li>
-              <li>
-                {/* <img className={cn(styles.skilIcon)} src={aeIcon} alt="ae" /> */}
-                Adobe After Effects
-              </li>
-              <li>
-                {/* <img
-                  className={cn(styles.skilIcon)}
-                  src={mohoIcon}
-                  alt="moho"
-                /> */}
-                Moho(Anime Studio)
-              </li>
-              <li>Characters</li>
-              <li>Lottie</li>
-              {/* <li>Mongoose</li> */}
-            </ul>
-
-            <div className={cn(styles.content_img_wrapper)}>
-              <img
-                className={cn(styles.content_img)}
-                src={motionIcon}
-                alt="motionIcon"
-              />
-            </div>
-          </div>
-        </div>
-
         <div
           style={{ marginLeft: "auto" }}
           className={cn(styles.skilsCol, "gradientBg")}
@@ -103,8 +65,8 @@ const SkilsContainer: FC = () => {
               <li>Ionic</li>
               <li>Html5</li>
               <li>Css3</li>
-              <li>React/Redux</li>
-              <li>Angular</li>
+              <li>React.js/Redux</li>
+              <li>Angular.js</li>
             </ul>
 
             <div className={cn(styles.content_img_wrapper)}>
@@ -116,7 +78,6 @@ const SkilsContainer: FC = () => {
             </div>
           </div>
         </div>
-
         <div className={cn(styles.skilsCol, "gradientBg")}>
           <h3 className={cn(styles.skilCol_title, "titleGradient")}>Backend</h3>
           <div className={cn(styles.skilCol_content)}>
@@ -136,6 +97,54 @@ const SkilsContainer: FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* OTHER */}
+      <h2 className={cn(styles.titleOther, "titleGradient")}>Other Skills</h2>
+      <div className={cn(styles.skilsRow)}>
+        <div className={cn(styles.skilsCol, "gradientBg")}>
+          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Mobile</h3>
+          <div className={cn(styles.skilCol_content)}>
+            <ul className={cn(styles.listSkils)}>
+              <li>Ionic</li>
+              <li>Dart</li>
+              <li>Flutter</li>
+            </ul>
+            <div className={cn(styles.content_img_wrapper)}>
+              <img
+                 className={cn(styles.content_img)}
+                 src={mobileIcon}
+                 alt="mobileIcon"
+              />
+            </div>
+          </div>
+        </div>
+
+
+        <div
+          className={cn(styles.skilsCol, "gradientBg")}
+        >
+          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Motion Design</h3>
+          <div className={cn(styles.skilCol_content)}>
+            <ul className={cn(styles.listSkils)}>
+              <li>Adobe Illustrator</li>
+              <li>Adobe Photoshop</li>
+              <li>Adobe After Effects</li>
+              <li>Moho(Anime Studio)</li>
+              <li>Characters</li>
+              <li>Lottie</li>
+            </ul>
+
+            <div className={cn(styles.content_img_wrapper)}>
+              <img
+                className={cn(styles.content_img)}
+                src={motionIcon}
+                alt="motionIcon"
+              />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

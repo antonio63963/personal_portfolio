@@ -1,7 +1,6 @@
 .skilsSection {
   padding: 0 30px;
   max-width: var(--maxWidth);
-  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +20,7 @@
   height: 100%;
 }
 .content_img_wrapper {
+  margin-top: auto;
   margin-left: 20px;
   flex-shrink: 2;
   width: 100%;
@@ -30,41 +30,48 @@
 .content_img {
   width: 100px;
   margin-left: auto;
+  margin-right: 15px;
   align-self: flex-end;
-  opacity: .5;
+  opacity: 0.5;
 }
 .skilsRow {
+  width: 100%;
   flex-wrap: wrap;
-  margin-top: 35px;
   display: flex;
   justify-content: space-between;
 }
 
 .skilsCol {
-  /* border: 1px solid #E0E0E0; */
-  /* background-color: #24195E; */
-  /* transform: rotate3d(1, 1, 0, 0deg); */
   flex: 2 2 auto;
-  margin: 7px 15px;
+  margin-top: 15px;
+  margin-left: 20px;
   border-radius: 15px;
   min-width: 210px;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: all 0.5s ease-in;
+  transition: all 1s ease-in;
+  animation: outItemAnimation .5s ease-out;
+}
+
+.titleOther {
+  margin: 35px 0 20px 0;
+  font-size: 36px;
+}
+.skilsCol:hover,
+.otherSkills:hover {
+  animation: itemAnimation 1s ease-in-out forwards;
 }
 .skilIcon {
   width: 20px;
   margin-right: 10px;
 }
-.skilsCol:hover {
-  transform: rotate3d(2, 1, 0, 15deg);
-}
 
 .skilCol_title {
   text-align: center;
-  margin: 7px 0 15px 0;
+  margin: 7px 0 25px 0;
+  font-size: 22px;
 }
 
 .listSkils {
@@ -74,7 +81,6 @@
 .listSkils > li {
   display: flex;
   align-items: center;
-  list-style-type: none;
   color: var(--blueTextColor);
   margin: 5px;
   line-height: 1.2rem;
@@ -84,6 +90,7 @@
 
 .lottieContainer {
   max-width: 700px;
+  margin-bottom: 35px;
 }
 
 @media screen and (max-width: 850px) {
@@ -106,5 +113,40 @@
 @media screen and (max-width: 580px) {
   .skilsSection {
     padding: 0 10px;
+  }
+}
+
+@keyframes itemAnimation {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+    box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+  }
+  50% {
+    transform: rotate3d(2, 1, 0, 15deg);
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+    box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+    box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+  }
+}
+@keyframes outItemAnimation {
+  0% {
+    transform: rotate3d(2, 1, 0, 15deg);
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+    box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
+    box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 0);
   }
 }
