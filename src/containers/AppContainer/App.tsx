@@ -18,40 +18,42 @@ function App() {
   const aboutSection = useRef<HTMLDivElement>(null);
   const homeSection = useRef<HTMLDivElement>(null);
 
-  const [isShownHome, setIsShownHome] = useState<boolean>(true);
   const [isLocked, setIsLocked] = useState<boolean>(true);
   const [isUnderground, setIsUnderground] = useState<boolean>(false);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
 
-  const scrollToPortfolio = useCallback((portfolio: Portfolio) => {
-    if(isLocked) {
-      setIsUnderground(true);
-      setIsLocked(false);
-    };
-    setPortfolio(portfolio);
-    const timerScroll = setTimeout(() => {
-      let markerTimerScroll = false;
-      if (portfolioSection.current && !markerTimerScroll) {
-        markerTimerScroll = true;
-        window.scrollTo({
-          top: portfolioSection.current.offsetTop,
-          behavior: "smooth",
-        });
-        let timerDeleteHome = setTimeout(() => {
-          // setIsShownHome(false);
-          setIsUnderground(false);
-          clearTimeout(timerScroll);
-          clearTimeout(timerDeleteHome);
-          // console.log(timerScroll)
-        }, 1000);
-      } else {
+  const scrollToPortfolio = useCallback(
+    (portfolio: Portfolio) => {
+      if (isLocked) {
+        setIsUnderground(true);
+        setIsLocked(false);
       }
-    }, 100);
-  }, [isLocked]);
+      setPortfolio(portfolio);
+      const timerScroll = setTimeout(() => {
+        let markerTimerScroll = false;
+        if (portfolioSection.current && !markerTimerScroll) {
+          markerTimerScroll = true;
+          window.scrollTo({
+            top: portfolioSection.current.offsetTop,
+            behavior: "smooth",
+          });
+          let timerDeleteHome = setTimeout(() => {
+            // setIsShownHome(false);
+            setIsUnderground(false);
+            clearTimeout(timerScroll);
+            clearTimeout(timerDeleteHome);
+            // console.log(timerScroll)
+          }, 1000);
+        } else {
+        }
+      }, 100);
+    },
+    [isLocked]
+  );
 
   const scrollToHome = useCallback(() => {
     const timerScroll = setTimeout(() => {
-      if(homeSection.current) {
+      if (homeSection.current) {
         window.scrollTo({
           top: homeSection.current.offsetTop,
           behavior: "smooth",
@@ -63,24 +65,24 @@ function App() {
           clearTimeout(timerScroll);
         }, 1500);
       }
-    }, 100)
-  }, [])
+    }, 100);
+  }, []);
 
   const scrollToSkils = useCallback(() => {
-      if (skilsSection.current) {
-        window.scrollTo({
-          top: skilsSection.current.offsetTop,
-          behavior: "smooth",
-        });
-      }
+    if (skilsSection.current) {
+      window.scrollTo({
+        top: skilsSection.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
   }, []);
   const scrollToAbout = useCallback(() => {
-      if (aboutSection.current) {
-        window.scrollTo({
-          top: aboutSection.current.offsetTop,
-          behavior: "smooth",
-        });
-      }
+    if (aboutSection.current) {
+      window.scrollTo({
+        top: aboutSection.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
   }, []);
 
   return (
@@ -94,14 +96,14 @@ function App() {
     >
       <div className="App">
         <Header
-        scrollToHome={scrollToHome}
+          scrollToHome={scrollToHome}
           scrollToSkils={scrollToSkils}
           scrollToPortfolio={scrollToPortfolio}
           scrollToAbout={scrollToAbout}
         />
-        {isShownHome && <div ref={homeSection}>
+        <div ref={homeSection}>
           <HomeContainer scrollToPortfolio={scrollToPortfolio} />
-        </div>}
+        </div>
         {!isLocked && (
           <>
             <section className="sectionPortfolio">

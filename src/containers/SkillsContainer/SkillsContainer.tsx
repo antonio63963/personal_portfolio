@@ -7,17 +7,8 @@ import backendIcon from "assets/icons/backendIcon.svg";
 import motionIcon from "assets/icons/motionIcon.svg";
 import mobileIcon from "assets/icons/mobileIcon.svg";
 
-import aeIcon from "assets/icons/ae.svg";
-import aiIcon from "assets/icons/ai.svg";
-import mohoIcon from "assets/icons/moho.svg";
-
 import styles from "./SkilsContainer.module.css";
 import useElementOnScreen from "hooks/useElementOnScreen";
-import { get } from "http";
-
-type TSkils = {
-  onScreen: boolean;
-};
 
 const SkilsContainer: FC = () => {
   const lottieContainer = useRef(null);

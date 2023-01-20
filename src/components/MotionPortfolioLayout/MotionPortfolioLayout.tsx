@@ -20,7 +20,7 @@ import behance from "assets/icons/behance.svg";
 
 
 import styles from "./MotionPortfolioLayout.module.css";
-import { ButtonLink, MotionItem, PortfolioItem } from "components";
+import { ButtonLink, PortfolioItem } from "components";
 
 const MotionPortfolioLayout: FC = () => {
   const [isLong, setIsLong] = useState<boolean>(false);

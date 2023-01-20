@@ -1,4 +1,4 @@
-import { FC, useCallback, useState, useContext, useEffect } from "react";
+import { FC, useContext } from "react";
 
 import cn from "classnames";
 import styles from "./Menu.module.css";
