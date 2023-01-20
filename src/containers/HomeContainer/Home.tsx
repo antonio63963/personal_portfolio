@@ -21,7 +21,7 @@ type HomeProps = {
 };
 
 const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
-  const { isLocked, setPortfolio } = useContext(AppContext);
+  const { isLocked } = useContext(AppContext);
   const lottieContainer = useRef(null);
   const [lottieAnimation, setLottieAnimation] = useState<AnimationItem>();
   const [animDirection, setAnimDirection] = useState<number>(1);
@@ -80,24 +80,23 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
     (portfolio: Portfolio) => {
       console.log("Click");
       if (lottieAnimation && isMorpheusBtnActive) {
-        //  setIsMorpheusBtnActive(false);
         if (isLocked) {
+          setIsMorpheusBtnActive(false);
           lottieAnimation.playSegments([130, 200], true);
           const onScroll = () => {
             scrollToPortfolio(portfolio);
-            setIsPagesUploaded(true);
-            lottieAnimation.removeEventListener('complete', onScroll);
+            const timerId = setTimeout(() => {
+              lottieAnimation.playSegments([42, 103], true);
+              setIsMorpheusBtnActive(true);
+              lottieAnimation.removeEventListener('complete', onScroll);
+              setIsPagesUploaded(true);
+              clearTimeout(timerId);
+            }, 1500);
           };
           lottieAnimation.addEventListener("complete", onScroll);
         } else {
           scrollToPortfolio(portfolio);
         }
-        // lottieAnimation.addEventListener("complete", () => {
-        //   setIsMorpheusBtnActive(false); // withot this double code on last second on scroll down the Morpheus will be visible
-        //   setIsLocked(false);
-        //   scrollToPortfolio(portfolio);
-        //   setIsPagesUploaded(true);
-        // });
       }
     },
     [isLocked, isMorpheusBtnActive, lottieAnimation, scrollToPortfolio]
