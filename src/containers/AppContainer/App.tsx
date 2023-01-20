@@ -8,12 +8,14 @@ import { HomeContainer } from "containers";
 import Underground from "components/Underground/Underground";
 import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer";
 import { Portfolio } from "context/AppContext.type";
+import { WebPortfolioLayout, MotionPortfolioLayout } from "components";
 import SkilsContainer from "containers/SkillsContainer/SkillsContainer";
 import Footer from "components/Footer/Footer";
 import Novohoodonosor from "components/Novohoodonosor/Novohoodonosor";
 
 function App() {
-  const portfolioSection = useRef<HTMLDivElement>(null);
+  const webSection = useRef<HTMLDivElement>(null);
+  const motionSection = useRef<HTMLDivElement>(null);
   const skilsSection = useRef<HTMLDivElement>(null);
   const aboutSection = useRef<HTMLDivElement>(null);
   const homeSection = useRef<HTMLDivElement>(null);
@@ -30,21 +32,26 @@ function App() {
       }
       setPortfolio(portfolio);
       const timerScroll = setTimeout(() => {
-        let markerTimerScroll = false;
-        if (portfolioSection.current && !markerTimerScroll) {
-          markerTimerScroll = true;
+        if (portfolio === Portfolio.web && webSection.current) {
           window.scrollTo({
-            top: portfolioSection.current.offsetTop,
+            top: webSection.current.offsetTop,
             behavior: "smooth",
           });
           let timerDeleteHome = setTimeout(() => {
-            // setIsShownHome(false);
             setIsUnderground(false);
             clearTimeout(timerScroll);
             clearTimeout(timerDeleteHome);
-            // console.log(timerScroll)
           }, 1000);
-        } else {
+        } else if(motionSection.current) {
+          window.scrollTo({
+            top: motionSection.current.offsetTop,
+            behavior: "smooth",
+          });
+          let timerDeleteHome = setTimeout(() => {
+            setIsUnderground(false);
+            clearTimeout(timerScroll);
+            clearTimeout(timerDeleteHome);
+          }, 1000);
         }
       }, 100);
     },
@@ -59,8 +66,6 @@ function App() {
           behavior: "smooth",
         });
         let timerDeleteHome = setTimeout(() => {
-          // setIsShownHome(false);
-          // setIsUnderground(false);
           clearTimeout(timerDeleteHome);
           clearTimeout(timerScroll);
         }, 1500);
@@ -108,8 +113,15 @@ function App() {
           <>
             <section className="sectionPortfolio">
               {isUnderground && <Underground />}
-              <div ref={portfolioSection}>
-                <PortfolioContainer portfolio={portfolio} />
+              <div ref={webSection}>
+                <PortfolioContainer portfolio={Portfolio.web} >
+                  <WebPortfolioLayout />
+                </PortfolioContainer>
+              </div>
+              <div ref={motionSection}>
+                <PortfolioContainer portfolio={Portfolio.motion} >
+                  <MotionPortfolioLayout />
+                </PortfolioContainer>
               </div>
             </section>
             <section ref={aboutSection}>
