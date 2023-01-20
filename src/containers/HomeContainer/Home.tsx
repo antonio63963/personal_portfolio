@@ -128,7 +128,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
       <div className={cn(styles.contentAlign)}>
         <div className={cn(styles.col_text)}>
           <h1 className={cn(styles.title, "titleGradient")}>
-            Welcome To My Personal Portpholio
+            Welcome To My Personal Portfolio
           </h1>
           <p className={cn(styles.description)}>
             Hi, my name is Anton Fomin. I'm a front-end developer with motion
