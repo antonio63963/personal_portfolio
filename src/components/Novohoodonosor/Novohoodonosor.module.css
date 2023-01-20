@@ -1,0 +1,10 @@
+.containerNovo {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.imgNovo {
+  text-align: center;
+  max-width: 300px;
+}
