@@ -44,6 +44,7 @@ const PortfolioItem: FC<TItem> = ({
           isLong ? styles.projectLong : styles.projectShort
         )}
       >
+        {gif && <button onClick={() => setIsModal(true)} className={cn(styles.openBtn)}>Open</button>}
         <div className={cn(styles.projectInfo_wrapper)}>
           <div className={cn(styles.projectWrapper_circleBg)}></div>
           <div className={cn(styles.projectWrapper_circleBg_small)}></div>
@@ -72,7 +73,7 @@ const PortfolioItem: FC<TItem> = ({
                 <div className={cn(styles.projectLogo)}>
                   <img
                     src={projectLogo}
-                    className={cn(styles.camoLogo)}
+                    className={cn(styles.myLogo)}
                     alt="github"
                   />
                 </div>
