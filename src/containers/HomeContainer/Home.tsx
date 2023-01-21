@@ -109,7 +109,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: require("lottie/morpheus2.json"),
+        animationData: require("lottie/morpheus.json"),
       });
       setLottieAnimation(anim);
     }

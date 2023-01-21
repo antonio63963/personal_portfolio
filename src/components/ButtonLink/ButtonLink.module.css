@@ -1,7 +1,7 @@
 .button {
   font-family: "Manrope", sans-serif;
   border-radius: 28px;
-  background: var(--purpleColor);
+  background: var(--orangeColor);
   margin-top: 40px;
   padding: 10px 20px;
   font-size: 20px;
@@ -22,7 +22,7 @@ a {
   background: var(--purpleColor);
 }
 .hover {
-  background: var(--orangeColor);
+  background: var(--purpleColor);
 }
 .hover:hover img {
   animation: arrowMoving 0.3s ease-in-out infinite;
