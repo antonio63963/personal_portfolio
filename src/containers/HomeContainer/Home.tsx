@@ -88,7 +88,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
             const timerId = setTimeout(() => {
               lottieAnimation.playSegments([42, 103], true);
               setIsMorpheusBtnActive(true);
-              lottieAnimation.removeEventListener('complete', onScroll);
+              lottieAnimation.removeEventListener("complete", onScroll);
               setIsPagesUploaded(true);
               clearTimeout(timerId);
             }, 1500);
@@ -109,7 +109,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: require("lottie/morpheus.json"),
+        animationData: require("lottie/morpheus2.json"),
       });
       setLottieAnimation(anim);
     }
@@ -137,7 +137,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
 
           <div>
             <ButtonLink
-              text={isCatchUp ? "Catch Up" : "Hang Up"}
+              text={isCatchUp ? "Catch Up" : "Back"}
               img={arrowIcon}
               onClick={catchUpThePhone}
             />
@@ -145,6 +145,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
         </div>
         <div className={cn(styles.col_lottie)}>
           <div className={cn(styles.lottieContainer)}>
+            {isCatchUp && <div onClick={catchUpThePhone} className={cn(styles.transparantLayer)}></div>}
             <div className={cn(styles.transparentButtonsRow)}>
               <button
                 className={cn("btn", styles.animation_btn)}

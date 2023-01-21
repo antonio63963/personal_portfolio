@@ -12,30 +12,23 @@ const About: FC = () => {
         <img className={cn(styles.avatar)} src={avatar} alt="avatar" />
       </div>
       <p className={cn(styles.aboutText)}>
-        Hi! My name is Anton Fomin.
-        I'm a front-end developer who have motion design skills. I have an
-        experience with {''}  
+        Hi! My name is Anton Fomin. I'm a front-end developer who have motion
+        design skills. I have an experience with {""}
         <span className={cn(styles.accentText)}>
-         Angular.js, React.js, Ionic, Node.js,
-          Express.js, MongoDB, Mongoose
+          Angular.js, React.js, Ionic, Node.js, Express.js, MongoDB, Mongoose
         </span>
-        . {' '}
-        Currently, when I have time, I write a mobile app for car
-        mechanics with Flutter.
+        . Currently, when I have time, I write a mobile app for car mechanics
+        with Flutter.
       </p>
-      <p style={{marginTop: '10px'}} className={cn(styles.aboutText)}>In this site I implemented motion design with After Effects and Lottie player. The purpose was creating complex controllable animation with javascript and make the site a little bit fun).</p>
-      {/* <p className={cn(styles.aboutText)}>
-        Hi! My name is Anton Fomin.
-        I'm a front-end developer who have motion design skills. I have an
-        experience with {''}  
+      <p style={{ marginTop: "10px" }} className={cn(styles.aboutText)}>
+        In this site I implemented motion design with{" "}
         <span className={cn(styles.accentText)}>
-         fixing bugs on Angular and writing fullstack app on Ionic, React.js, Node.js,
-          Express.js, MongoDB, Mongoose
-        </span>
-        . {' '}
-        Currently, when I have time, I write a mobile app for car
-        mechanics with Flutter.
-      </p> */}
+          {" "}
+          After Effects and Lottie player.
+        </span>{" "}
+        The purpose was creating complex controllable animation with javascript
+        and make the site a little bit fun).
+      </p>
     </div>
   );
 };

@@ -71,7 +71,7 @@ const Menu: FC<TMenu> = ({
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
-          About
+          About Me
         </li>
         <li className={cn(styles.notActiveLink)} onClick={() => {
           scrollToSkils();
@@ -80,7 +80,7 @@ const Menu: FC<TMenu> = ({
           {isLocked && (
             <img src={lock} alt="projects" className={cn(styles.lockIcon)} />
           )}
-          Skils
+          Skills
         </li>
         <li>
           <div className={cn(styles.socials)}>

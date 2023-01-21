@@ -8,10 +8,11 @@ type TButton = {
   link?: string;
   img: string;
   text: string;
+  isPressed?: boolean;
   onClick?: () => void;
 };
 
-const ButtonLink: FC<TButton> = ({ link, img, text, onClick }) => {
+const ButtonLink: FC<TButton> = ({ link, img, text, isPressed, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

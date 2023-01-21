@@ -8,8 +8,6 @@
   align-items: center;
   justify-content: space-between;
   height: calc(100vh - 50px);
-  /* transform: translateY(-100%) !important; */
-  /* margin-bottom: 50px; */
 }
 
 .notLockedApp {
@@ -28,6 +26,7 @@
   line-height: 52px;
   font-family: "Archivo Black", sans-serif;
 }
+
 .description {
   margin-top: 40px;
   font-size: 22px;
@@ -35,29 +34,7 @@
   line-height: 27px;
   font-family: "Manrope", sans-serif;
 }
-.catchPhone_btn {
-  font-family: "Manrope", sans-serif;
-  border-radius: 28px;
-  background: var(--orangeColor);
-  margin-top: 40px;
-  padding: 10px 20px;
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-  display: flex;
-  align-items: center;
-}
-.catchPhone_img {
-  width: 20px;
-  margin-left: 10px;
-}
-.catchPhone_btn:hover {
-  background: var(--purpleColor);
-  /* letter-spacing: .1em; */
-}
-.catchPhone_btn:hover>img {
-  animation: arrowMoving .3s ease-in-out infinite;
 
-}
 @keyframes arrowMoving {
   0% {transform: translateX(0)}
   50% {transform: translateX(2px)}
@@ -67,6 +44,7 @@
 #lottie {
   max-width: 100%;
 }
+
 .contentAlign {
   width: 100%;
   height: 100%;
@@ -84,11 +62,19 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
 .lottieContainer {
   position: relative;
   height: 100%;
   display: flex;
   justify-content: center;
+}
+
+.transparantLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 }
 
 .transparentButtonsRow {
@@ -101,6 +87,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .animation_btn {
   color: transparent;
   background-color: transparent;
@@ -108,6 +95,7 @@
   width: 100px;
   text-align: center;
 }
+
 .web_btn {
   color: transparent;
   background-color: transparent;
@@ -127,6 +115,7 @@
     line-height: 24px;
   }
 }
+
 @media screen and (max-width: 715px) {
   .home {
     padding: 20px;
@@ -141,15 +130,8 @@
     font-size: 16px;
     line-height: 18px;
   }
-  .catchPhone_btn {
-    margin-top: 25px;
-    font-size: 18px;
-    padding: 7px 16px;
-  }
-  .catchPhone_img {
-    width: 18px;
-  }
 }
+
 @media screen and (max-width: 580px) {
   .home {
     padding: 10px;
@@ -165,14 +147,6 @@
     margin-top: 20px;
     font-size: 16px;
     line-height: 18px;
-  }
-  .catchPhone_btn {
-    margin-top: 25px;
-    font-size: 14px;
-    padding: 7px 12px;
-  }
-  .catchPhone_img {
-    width: 16px;
   }
  .contentAlign {
   flex-direction: column;

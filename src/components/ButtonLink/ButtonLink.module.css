@@ -1,35 +1,43 @@
 .button {
   font-family: "Manrope", sans-serif;
-   border-radius: 28px;
-   background: var(--orangeColor);
-   margin-top: 40px;
-   padding: 10px 20px;
-   font-size: 20px;
-   display: flex;
-   align-items: center;
-   white-space: nowrap;
-   transition: all .3s ease-in-out;
+  border-radius: 28px;
+  background: var(--purpleColor);
+  margin-top: 40px;
+  padding: 10px 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+  color: var(--textColor);
 }
 a {
- text-decoration: none;
+  text-decoration: none;
 }
 .btnIcon {
- width: 22px;
- margin-left: 15px;
+  width: 22px;
+  margin-left: 15px;
 }
-
+.pressed {
+  background: var(--purpleColor);
+}
 .hover {
- background: var(--purpleColor);
- /* letter-spacing: .1em; */
+  background: var(--orangeColor);
 }
 .hover:hover img {
-  animation: arrowMoving .3s ease-in-out infinite;
+  animation: arrowMoving 0.3s ease-in-out infinite;
 }
 
 @keyframes arrowMoving {
-  0% {transform: translateX(0)}
-  50% {transform: translateX(2px)}
-  100% {transform: translateX(0px)}
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 @media screen and (max-width: 715px) {
@@ -49,5 +57,5 @@ a {
   .btnIcon {
     width: 16px;
     margin-left: 7px;
-  } 
+  }
 }
