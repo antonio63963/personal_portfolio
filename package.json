@@ -2,7 +2,6 @@
   "name": "personal_portpholio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://personal-portfolio-oxq4-awc3rr4ga-antonio63963s-projects.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
