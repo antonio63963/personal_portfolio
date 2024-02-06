@@ -4,7 +4,6 @@ import cn from 'classnames';
 import styles from './WebPortfolioLayout.module.css';
 
 import camoBg from 'assets/camo.png';
-
 import tailwindIcon from 'assets/icons/tailwind.svg';
 import tsIcon from 'assets/icons/ts.svg';
 import reactIcon from 'assets/icons/react.svg';

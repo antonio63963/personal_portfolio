@@ -24,10 +24,6 @@ function App() {
   const [isUnderground, setIsUnderground] = useState<boolean>(false);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
 
-  function scrollTest() {
-    console.log('Hello Scroll');
-  }
-
   const scrollToPortfolio = useCallback(
     (portfolio: Portfolio) => {
       if (isLocked) {
