@@ -49,7 +49,7 @@ const SkilsContainer: FC = () => {
           style={{ marginLeft: "auto" }}
           className={cn(styles.skilsCol, "gradientBg")}
         >
-          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Fontend</h3>
+          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Frontend</h3>
           <div className={cn(styles.skilCol_content)}>
             <ul className={cn(styles.listSkils)}>
               <li>Javascript/TS</li>

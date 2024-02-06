@@ -1,17 +1,17 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { About, Header } from "components";
-import "./App.css";
+import { About, Header } from 'components';
+import './App.css';
 
-import AppContext from "context/AppContext";
-import { HomeContainer } from "containers";
-import Underground from "components/Underground/Underground";
-import PortfolioContainer from "containers/PortfolioContainer/PortfolioContainer";
-import { Portfolio } from "context/AppContext.type";
-import { WebPortfolioLayout, MotionPortfolioLayout } from "components";
-import SkilsContainer from "containers/SkillsContainer/SkillsContainer";
-import Footer from "components/Footer/Footer";
-import Novohoodonosor from "components/Novohoodonosor/Novohoodonosor";
+import AppContext from 'context/AppContext';
+import { HomeContainer } from 'containers';
+import Underground from 'components/Underground/Underground';
+import PortfolioContainer from 'containers/PortfolioContainer/PortfolioContainer';
+import { Portfolio } from 'context/AppContext.type';
+import { WebPortfolioLayout, MotionPortfolioLayout } from 'components';
+import SkilsContainer from 'containers/SkillsContainer/SkillsContainer';
+import Footer from 'components/Footer/Footer';
+import Novohoodonosor from 'components/Novohoodonosor/Novohoodonosor';
 
 function App() {
   const webSection = useRef<HTMLDivElement>(null);
@@ -24,6 +24,10 @@ function App() {
   const [isUnderground, setIsUnderground] = useState<boolean>(false);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
 
+  function scrollTest() {
+    console.log('Hello Scroll');
+  }
+
   const scrollToPortfolio = useCallback(
     (portfolio: Portfolio) => {
       if (isLocked) {
@@ -31,21 +35,28 @@ function App() {
         setIsLocked(false);
       }
       setPortfolio(portfolio);
+      console.log(webSection)
+      // window.addEventListener('scroll', (e) => {
+      //   // console.log('Scroll: ', e);
+      //   // setIsUnderground(false);
+      //   // clearTimeout(timerScroll);
+      //    scrollTest();
+      // });
       const timerScroll = setTimeout(() => {
         if (portfolio === Portfolio.web && webSection.current) {
           window.scrollTo({
             top: webSection.current.offsetTop,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
           let timerDeleteHome = setTimeout(() => {
             setIsUnderground(false);
             clearTimeout(timerScroll);
             clearTimeout(timerDeleteHome);
           }, 1000);
-        } else if(motionSection.current) {
+        } else if (motionSection.current) {
           window.scrollTo({
             top: motionSection.current.offsetTop,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
           let timerDeleteHome = setTimeout(() => {
             setIsUnderground(false);
@@ -63,7 +74,7 @@ function App() {
       if (homeSection.current) {
         window.scrollTo({
           top: homeSection.current.offsetTop,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
         let timerDeleteHome = setTimeout(() => {
           clearTimeout(timerDeleteHome);
@@ -77,7 +88,7 @@ function App() {
     if (skilsSection.current) {
       window.scrollTo({
         top: skilsSection.current.offsetTop,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   }, []);
@@ -85,10 +96,14 @@ function App() {
     if (aboutSection.current) {
       window.scrollTo({
         top: aboutSection.current.offsetTop,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   }, []);
+
+  useEffect(() => {
+    
+  } , [])
 
   return (
     <AppContext.Provider
@@ -99,7 +114,7 @@ function App() {
         setPortfolio,
       }}
     >
-      <div className="App">
+      <div className='App'>
         <Header
           scrollToHome={scrollToHome}
           scrollToSkils={scrollToSkils}
@@ -111,15 +126,15 @@ function App() {
         </div>
         {!isLocked && (
           <>
-            <section className="sectionPortfolio">
+            <section className='sectionPortfolio'>
               {isUnderground && <Underground />}
               <div ref={webSection}>
-                <PortfolioContainer portfolio={Portfolio.web} >
+                <PortfolioContainer portfolio={Portfolio.web}>
                   <WebPortfolioLayout />
                 </PortfolioContainer>
               </div>
               <div ref={motionSection}>
-                <PortfolioContainer portfolio={Portfolio.motion} >
+                <PortfolioContainer portfolio={Portfolio.motion}>
                   <MotionPortfolioLayout />
                 </PortfolioContainer>
               </div>

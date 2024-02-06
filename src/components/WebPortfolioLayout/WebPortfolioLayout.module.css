@@ -1,3 +1,21 @@
+/* .projectsRow {
+  display: flex;
+  max-width: 100%;
+}
+@media screen and (max-width: 715px) {
+  .projectsRow {
+    flex-direction: column;
+  }
+} */
+
+.motionItemsRow {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
 .projectsRow {
   display: flex;
   max-width: 100%;

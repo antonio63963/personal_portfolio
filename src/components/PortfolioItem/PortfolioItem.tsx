@@ -1,10 +1,10 @@
-import { FC, useState } from "react";
-import cn from "classnames";
-import styles from "./PortfolioItem.module.css";
+import { FC, useState } from 'react';
+import cn from 'classnames';
+import styles from './PortfolioItem.module.css';
 
-import githubIcon from "assets/icons/github.svg";
+import githubIcon from 'assets/icons/github.svg';
 
-import Modal from "../Modal/Modal";
+import Modal from '../Modal/Modal';
 
 type TItem = {
   isLong: boolean;
@@ -44,7 +44,14 @@ const PortfolioItem: FC<TItem> = ({
           isLong ? styles.projectLong : styles.projectShort
         )}
       >
-        {gif && <button onClick={() => setIsModal(true)} className={cn(styles.openBtn)}>Open</button>}
+        {gif && (
+          <button
+            onClick={() => setIsModal(true)}
+            className={cn(styles.openBtn)}
+          >
+            Open
+          </button>
+        )}
         <div className={cn(styles.projectInfo_wrapper)}>
           <div className={cn(styles.projectWrapper_circleBg)}></div>
           <div className={cn(styles.projectWrapper_circleBg_small)}></div>
@@ -52,15 +59,15 @@ const PortfolioItem: FC<TItem> = ({
             {targetLink ? (
               <a
                 className={cn(styles.linkToSite)}
-                target="_blank"
+                target='_blank'
                 href={targetLink}
-                rel="noreferrer"
+                rel='noreferrer'
               >
                 <div className={cn(styles.projectLogo)}>
                   <img
                     src={projectLogo}
                     className={cn(styles.camoLogo)}
-                    alt="github"
+                    alt='github'
                   />
                 </div>
                 www...
@@ -74,7 +81,7 @@ const PortfolioItem: FC<TItem> = ({
                   <img
                     src={projectLogo}
                     className={cn(styles.myLogo)}
-                    alt="github"
+                    alt='github'
                   />
                 </div>
                 Watch the Gif
@@ -82,16 +89,16 @@ const PortfolioItem: FC<TItem> = ({
             )}
             <p>{description}</p>
             {githubLink && (
-              <div className={cn(styles.githubRow)}>
-                <a target="_blank" href={githubLink} rel="noreferrer">
+              <a target='_blank' href={githubLink} rel='noreferrer'>
+                <div className={cn(styles.githubRow)}>
                   <img
                     src={githubIcon}
                     className={cn(styles.githubIcon)}
-                    alt="github"
+                    alt='github'
                   />
-                </a>
-                <p>Github repo</p>
-              </div>
+                  <p>Github repo</p>
+                </div>
+              </a>
             )}
 
             <ul className={cn(styles.projectInfo_list)}>
@@ -110,7 +117,7 @@ const PortfolioItem: FC<TItem> = ({
           </div>
         </div>
         <div className={cn(styles.projectImage)}>
-          <img src={bgItem} alt="project" className={cn(styles.image)} />
+          <img src={bgItem} alt='project' className={cn(styles.image)} />
         </div>
       </div>
     </>

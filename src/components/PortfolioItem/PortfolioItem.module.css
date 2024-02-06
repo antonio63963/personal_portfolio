@@ -4,6 +4,7 @@
 }
 .projectShort {
   flex-shrink: 2;
+  flex-grow: 1;
   transition: all 0.7s ease-in-out;
 }
 
@@ -34,6 +35,8 @@
   -webkit-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
   -moz-box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
   box-shadow: 2px 2px 10px 0px rgba(174, 103, 250, 1);
+  flex-grow: 3;
+  flex-shrink: 1;
 }
 
 .project:hover > .projectImage {
@@ -94,7 +97,7 @@ ul.projectInfo_list {
   align-items: center;
 }
 h3 {
-  font-family: "Archivo Black", sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   margin-bottom: 10px;
 }
 .linkToSite {
@@ -113,9 +116,13 @@ h3 {
 }
 .camoLogo {
   width: 60px;
+  height: 24px;
+  object-fit: contain;
 }
 .myLogo {
-  width: 30px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 .textInfo {
   color: var(--grayDark);
@@ -147,13 +154,24 @@ li {
   object-fit: cover;
 }
 .githubRow {
-  margin-top: 20px;
+  max-width: 150px;
+  padding: 6px;
+  border-radius: 20px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   font-size: 14px;
   color: #000;
+  transition: background-color .7s ease-in;
+}
+.githubRow>p {
+  font-weight: bold;
+}
+.githubRow:hover {
+  background-color: #dad9d9;
 }
 .githubIcon {
+  color: white;
   cursor: pointer;
   margin-right: 10px;
   width: 25px;
