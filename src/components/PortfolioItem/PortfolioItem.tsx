@@ -1,10 +1,8 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import cn from 'classnames';
 import styles from './PortfolioItem.module.css';
 
 import githubIcon from 'assets/icons/github.svg';
-
-import Modal from '../Modal/Modal';
 
 type TItem = {
   isLong: boolean;
@@ -16,7 +14,6 @@ type TItem = {
   bgItem: string;
   techList: string[];
   onClick?: () => void;
-  gif?: string;
 };
 
 const PortfolioItem: FC<TItem> = ({
@@ -29,13 +26,12 @@ const PortfolioItem: FC<TItem> = ({
   bgItem,
   techList,
   onClick,
-  gif,
 }) => {
-  const [isModal, setIsModal] = useState(false);
+  // const [isModal, setIsModal] = useState(false);
 
   return (
     <>
-      {isModal && <Modal gif={gif} closeModal={() => setIsModal(false)} />}
+      {/* {isModal && <Modal gif={gif} closeModal={() => setIsModal(false)} />} */}
       <div
         onMouseEnter={() => setIsLong(!isLong)}
         onMouseLeave={() => setIsLong(!isLong)}
@@ -44,14 +40,14 @@ const PortfolioItem: FC<TItem> = ({
           isLong ? styles.projectLong : styles.projectShort
         )}
       >
-        {gif && (
+        {/* {gif && (
           <button
             onClick={() => setIsModal(true)}
             className={cn(styles.openBtn)}
           >
             Open
           </button>
-        )}
+        )} */}
         <div className={cn(styles.projectInfo_wrapper)}>
           <div className={cn(styles.projectWrapper_circleBg)}></div>
           <div className={cn(styles.projectWrapper_circleBg_small)}></div>
@@ -75,7 +71,7 @@ const PortfolioItem: FC<TItem> = ({
             ) : (
               <div
                 className={cn(styles.linkToSite)}
-                onClick={() => setIsModal(true)}
+                onClick={() => window.open(targetLink, '_blank')}
               >
                 <div className={cn(styles.projectLogo)}>
                   <img
@@ -116,7 +112,12 @@ const PortfolioItem: FC<TItem> = ({
             </ul>
           </div>
         </div>
-        <div className={cn(styles.projectImage)}>
+        <div
+          className={cn(styles.projectImage)}
+          onClick={() => {
+            window.open(targetLink, '_blank');
+          }}
+        >
           <img src={bgItem} alt='project' className={cn(styles.image)} />
         </div>
       </div>
