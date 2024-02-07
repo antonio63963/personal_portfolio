@@ -27,8 +27,9 @@ function App() {
   const scrollToPortfolio = useCallback(
     (portfolio: Portfolio) => {
       if (isLocked) {
-        // setIsUnderground(true);
+        setIsUnderground(true);
         setIsLocked(false);
+        document.body.style.overflow = "scroll";
       }
       setPortfolio(portfolio);
       console.log(webSection)
@@ -48,7 +49,7 @@ function App() {
             setIsUnderground(false);
             clearTimeout(timerScroll);
             clearTimeout(timerDeleteHome);
-          }, 1000);
+          }, 1500);
         } else if (motionSection.current) {
           window.scrollTo({
             top: motionSection.current.offsetTop,
@@ -98,7 +99,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    document.body.style.overflow = "hidden";
   } , [])
 
   return (
@@ -120,7 +126,7 @@ function App() {
         <div ref={homeSection}>
           <HomeContainer scrollToPortfolio={scrollToPortfolio} />
         </div>
-        {!isLocked && (
+        {/* {!isLocked && ( */}
           <>
             <section className='sectionPortfolio'>
               {isUnderground && <Underground />}
@@ -144,7 +150,7 @@ function App() {
             <Novohoodonosor />
             <Footer />
           </>
-        )}
+        {/* )} */}
       </div>
     </AppContext.Provider>
   );
