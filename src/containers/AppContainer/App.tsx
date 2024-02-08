@@ -21,7 +21,7 @@ function App() {
   const homeSection = useRef<HTMLDivElement>(null);
 
   const [isLocked, setIsLocked] = useState<boolean>(true);
-  const [isUnderground, setIsUnderground] = useState<boolean>(true);
+  const [isUnderground, setIsUnderground] = useState<boolean>(false);
   const [portfolio, setPortfolio] = useState<Portfolio>(Portfolio.motion);
 
   const scrollToPortfolio = useCallback(

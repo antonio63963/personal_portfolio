@@ -91,7 +91,7 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
               lottieAnimation.removeEventListener("complete", onScroll);
               setIsPagesUploaded(true);
               clearTimeout(timerId);
-            }, 1500);
+            }, 2500);
           };
           lottieAnimation.addEventListener("complete", onScroll);
         } else {
