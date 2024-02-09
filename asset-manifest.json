@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal_portfolio/static/css/main.ac989e0c.css",
-    "main.js": "/personal_portfolio/static/js/main.5099c5e2.js",
+    "main.css": "/personal_portfolio/static/css/main.a7bd33a5.css",
+    "main.js": "/personal_portfolio/static/js/main.5193a95a.js",
     "static/js/787.a351fc42.chunk.js": "/personal_portfolio/static/js/787.a351fc42.chunk.js",
     "static/media/novohoodonosor.gif": "/personal_portfolio/static/media/novohoodonosor.97cda2a37cbe19b04fc3.gif",
     "static/media/splash_screen.jpg": "/personal_portfolio/static/media/splash_screen.cf3ce0fc0517fc5400da.jpg",
@@ -47,12 +47,12 @@
     "static/media/email.svg": "/personal_portfolio/static/media/email.e84e4e36790d74abca26aca60d021158.svg",
     "static/media/css3.svg": "/personal_portfolio/static/media/css3.680a9b0151267d7f6add6d7af74a308b.svg",
     "static/media/arrow.svg": "/personal_portfolio/static/media/arrow.73b5facd0d2225e2ef704ebe14fda3d8.svg",
-    "main.ac989e0c.css.map": "/personal_portfolio/static/css/main.ac989e0c.css.map",
-    "main.5099c5e2.js.map": "/personal_portfolio/static/js/main.5099c5e2.js.map",
+    "main.a7bd33a5.css.map": "/personal_portfolio/static/css/main.a7bd33a5.css.map",
+    "main.5193a95a.js.map": "/personal_portfolio/static/js/main.5193a95a.js.map",
     "787.a351fc42.chunk.js.map": "/personal_portfolio/static/js/787.a351fc42.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac989e0c.css",
-    "static/js/main.5099c5e2.js"
+    "static/css/main.a7bd33a5.css",
+    "static/js/main.5193a95a.js"
   ]
 }
