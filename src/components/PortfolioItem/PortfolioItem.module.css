@@ -106,15 +106,18 @@ h3 {
   align-items: center;
   color: var(--grayDark);
 }
-.projectLogo {
-  background-color: var(--bgColor);
+.projectLogoBg {
   border-radius: 20px;
   padding: 5px 10px;
   display: flex;
   margin-bottom: 20px;
   margin-right: 12px;
 }
-.camoLogo {
+.logoDarkBg {
+  background-color: var(--bgColor);
+}
+
+.logoImg {
   width: 60px;
   height: 24px;
   object-fit: contain;

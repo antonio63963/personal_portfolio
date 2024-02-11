@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
 import cn from 'classnames';
 
-import devsteamCover from 'assets/covers/devsteamCover.png';
+import devsteamCover from 'assets/covers/devsteamCover.jpg';
 
-import girlCover from 'assets/covers/girlCover.png';
+import girlCover from 'assets/covers/girlCover.jpg';
 
-import hockeyCover from 'assets/covers/hockeyCover.png';
+import hockeyCover from 'assets/covers/hockeyCover.jpg';
 
-import itakaCover from 'assets/covers/itakaCover.png';
+import itakaCover from 'assets/covers/itakaCover.jpg';
 
 import ae from 'assets/icons/ae.svg';
 import ai from 'assets/icons/ai.svg';
@@ -45,9 +45,8 @@ const MotionPortfolioLayout: FC = () => {
           techList={[ai, moho]}
         />
       </div>
-      <div style={{ height: '35px' }}></div>
 
-      <div className={cn(styles.projectsRow)}>
+      <div className={cn(styles.projectsRow, styles.betweenMargin)}>
         <PortfolioItem
           targetLink='https://drive.google.com/file/d/1jYJPN1Y6z8HIbCvfUf42ZQAvKEyhgS2X/view?usp=drive_link'
           isLong={isLong}

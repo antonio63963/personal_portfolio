@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import styles from './WebPortfolioLayout.module.css';
 
-import camoBg from 'assets/camo.png';
+import camoBg from 'assets/camo.jpg';
 import tailwindIcon from 'assets/icons/tailwind.svg';
 import tsIcon from 'assets/icons/ts.svg';
 import reactIcon from 'assets/icons/react.svg';
@@ -20,11 +20,19 @@ import aiIcon from 'assets/icons/ai.svg';
 
 import camoLogo from 'assets/icons/camoLogo.png';
 import eyeTrackerLogo from 'assets/eyeTrackerLogo.svg';
-import eyeTrackerBg from 'assets/eyeTracker.png';
+import eyeTrackerBg from 'assets/eyeTracker.jpg';
 import ninjaGame from 'assets/splash_screen.jpg';
 
+import doShopLogo from 'assets/doShop_logo.svg';
+import doShopCover from 'assets/mobile/doShop_banner.jpg';
+import sqliteIcon from 'assets/icons/sqlite.svg';
+import flutterIcon from 'assets/icons/flutterio.svg';
+import figmaIcon from 'assets/icons/figma.svg';
+import blenderIcon from 'assets/icons/blender.svg';
+
+
 import myLogo from 'assets/logo_web.png';
-import slidersUiBg from 'assets/slidersUI.png';
+import slidersUiBg from 'assets/slidersUI.jpg';
 
 import { ButtonLink, PortfolioItem } from 'components';
 
@@ -63,8 +71,8 @@ const WebPortfolioLayout: FC = () => {
           techList={[htmlIcon, jsIcon, cssIcon, sassIcon]}
         />
       </div>
-      <div style={{ height: '35px' }}></div>
-      <div className={cn(styles.projectsRow)}>
+      {/* <div style={{ height: '35px' }}></div> */}
+      <div className={cn(styles.projectsRow, styles.betweenMargin)}>
         <PortfolioItem
           isLong={isLong}
           setIsLong={setIsLong}
@@ -86,6 +94,36 @@ const WebPortfolioLayout: FC = () => {
           bgItem={ninjaGame}
           techList={[htmlIcon, cssIcon, jsIcon, aeIcon, aiIcon]}
         />
+      </div>
+      {/* MOBILE */}
+      {/* <div style={{ height: '35px' }}></div> */}
+      <div className={cn(styles.projectsRow, styles.betweenMargin)}>
+        <PortfolioItem
+          isLong={!isLong}
+          setIsLong={setIsLong}
+          description='Mobile App for shopping lists and creating useful templates.'
+          targetLink='https://youtu.be/DIXvJ8mtBL8'
+          projectLogo={doShopLogo}
+          noLogoBg={true}
+          bgItem={doShopCover}
+          techList={[
+            figmaIcon,
+            blenderIcon,
+            flutterIcon,
+            sqliteIcon
+          ]}
+        />
+        {/* <div style={{ width: '50px' }}></div>
+        <PortfolioItem
+          isLong={isLong}
+          setIsLong={setIsLong}
+          description='Landing page was made by pure java script without any library.'
+          targetLink='https://antonio63963.github.io/eyeTracker/'
+          githubLink='https://github.com/antonio63963/eyeTracker'
+          projectLogo={eyeTrackerLogo}
+          bgItem={eyeTrackerBg}
+          techList={[htmlIcon, jsIcon, cssIcon, sassIcon]}
+        /> */}
       </div>
       <ButtonLink
         link='https://github.com/antonio63963'

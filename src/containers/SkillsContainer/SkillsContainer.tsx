@@ -1,14 +1,14 @@
-import { FC, useCallback, useEffect, useRef, useState } from "react";
-import lottie, { AnimationItem } from "lottie-web";
-import cn from "classnames";
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import lottie, { AnimationItem } from 'lottie-web';
+import cn from 'classnames';
 
-import frontendIcon from "assets/icons/frontendIcon.svg";
-import backendIcon from "assets/icons/backendIcon.svg";
-import motionIcon from "assets/icons/motionIcon.svg";
-import mobileIcon from "assets/icons/mobileIcon.svg";
+import frontendIcon from 'assets/icons/frontendIcon.svg';
+import backendIcon from 'assets/icons/backendIcon.svg';
+import motionIcon from 'assets/icons/motionIcon.svg';
+import mobileIcon from 'assets/icons/mobileIcon.svg';
 
-import styles from "./SkilsContainer.module.css";
-import useElementOnScreen from "hooks/useElementOnScreen";
+import styles from './SkilsContainer.module.css';
+import useElementOnScreen from 'hooks/useElementOnScreen';
 
 const SkilsContainer: FC = () => {
   const lottieContainer = useRef(null);
@@ -21,10 +21,10 @@ const SkilsContainer: FC = () => {
     if (lottieContainer?.current) {
       const anim = lottie.loadAnimation({
         container: lottieContainer.current,
-        renderer: "svg",
+        renderer: 'svg',
         loop: false,
         autoplay: false,
-        animationData: require("lottie/neo.json"),
+        animationData: require('lottie/neo.json'),
       });
       setLottieAnimation(anim);
     }
@@ -42,14 +42,16 @@ const SkilsContainer: FC = () => {
 
   return (
     <section className={cn(styles.skilsSection)}>
-      <h1 className={cn(styles.title, "titleGradient")}>Skills</h1>
+      <h1 className={cn(styles.title, 'titleGradient')}>Skills</h1>
       <div className={cn(styles.lottieContainer)} ref={lottieContainer}></div>
       <div className={cn(styles.skilsRow)}>
         <div
-          style={{ marginLeft: "auto" }}
-          className={cn(styles.skilsCol, "gradientBg")}
+          style={{ marginLeft: 'auto' }}
+          className={cn(styles.skilsCol, 'gradientBg')}
         >
-          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Frontend</h3>
+          <h3 className={cn(styles.skilCol_title, 'titleGradient')}>
+            Frontend
+          </h3>
           <div className={cn(styles.skilCol_content)}>
             <ul className={cn(styles.listSkils)}>
               <li>Javascript/TS</li>
@@ -64,13 +66,13 @@ const SkilsContainer: FC = () => {
               <img
                 className={cn(styles.content_img)}
                 src={frontendIcon}
-                alt="frontendIcon"
+                alt='frontendIcon'
               />
             </div>
           </div>
         </div>
-        <div className={cn(styles.skilsCol, "gradientBg")}>
-          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Backend</h3>
+        <div className={cn(styles.skilsCol, 'gradientBg')}>
+          <h3 className={cn(styles.skilCol_title, 'titleGradient')}>Backend</h3>
           <div className={cn(styles.skilCol_content)}>
             <ul className={cn(styles.listSkils)}>
               <li>Javascript/TS</li>
@@ -83,7 +85,7 @@ const SkilsContainer: FC = () => {
               <img
                 className={cn(styles.content_img)}
                 src={backendIcon}
-                alt="backendIcon"
+                alt='backendIcon'
               />
             </div>
           </div>
@@ -91,10 +93,10 @@ const SkilsContainer: FC = () => {
       </div>
 
       {/* OTHER */}
-      <h2 className={cn(styles.titleOther, "titleGradient")}>Other Skills</h2>
+      <h2 className={cn(styles.titleOther, 'titleGradient')}>Other Skills</h2>
       <div className={cn(styles.skilsRow)}>
-        <div className={cn(styles.skilsCol, "gradientBg")}>
-          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Mobile</h3>
+        <div className={cn(styles.skilsCol, 'gradientBg')}>
+          <h3 className={cn(styles.skilCol_title, 'titleGradient')}>Mobile</h3>
           <div className={cn(styles.skilCol_content)}>
             <ul className={cn(styles.listSkils)}>
               <li>Ionic</li>
@@ -103,19 +105,18 @@ const SkilsContainer: FC = () => {
             </ul>
             <div className={cn(styles.content_img_wrapper)}>
               <img
-                 className={cn(styles.content_img)}
-                 src={mobileIcon}
-                 alt="mobileIcon"
+                className={cn(styles.content_img)}
+                src={mobileIcon}
+                alt='mobileIcon'
               />
             </div>
           </div>
         </div>
 
-
-        <div
-          className={cn(styles.skilsCol, "gradientBg")}
-        >
-          <h3 className={cn(styles.skilCol_title, "titleGradient")}>Motion Design</h3>
+        <div className={cn(styles.skilsCol, 'gradientBg')}>
+          <h3 className={cn(styles.skilCol_title, 'titleGradient')}>
+            Motion Design
+          </h3>
           <div className={cn(styles.skilCol_content)}>
             <ul className={cn(styles.listSkils)}>
               <li>Adobe Illustrator</li>
@@ -130,12 +131,11 @@ const SkilsContainer: FC = () => {
               <img
                 className={cn(styles.content_img)}
                 src={motionIcon}
-                alt="motionIcon"
+                alt='motionIcon'
               />
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

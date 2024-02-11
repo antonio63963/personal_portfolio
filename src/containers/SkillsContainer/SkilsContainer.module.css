@@ -42,9 +42,9 @@
 }
 
 .skilsCol {
-  flex: 2 2 auto;
+  /* flex: 2 2 auto; */
+  flex-grow: 2;
   margin-top: 15px;
-  margin-left: 20px;
   border-radius: 15px;
   min-width: 210px;
   padding: 10px 20px;
@@ -53,6 +53,10 @@
   cursor: pointer;
   transition: all 1s ease-in;
   animation: outItemAnimation .5s ease-out;
+}
+
+.skilsCol:last-child {
+  margin-left: 20px;
 }
 
 .titleOther {

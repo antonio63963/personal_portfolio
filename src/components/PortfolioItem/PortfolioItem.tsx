@@ -13,6 +13,7 @@ type TItem = {
   projectLogo: string;
   bgItem: string;
   techList: string[];
+  noLogoBg?: boolean;
   onClick?: () => void;
 };
 
@@ -25,6 +26,7 @@ const PortfolioItem: FC<TItem> = ({
   projectLogo,
   bgItem,
   techList,
+  noLogoBg,
   onClick,
 }) => {
   // const [isModal, setIsModal] = useState(false);
@@ -59,14 +61,14 @@ const PortfolioItem: FC<TItem> = ({
                 href={targetLink}
                 rel='noreferrer'
               >
-                <div className={cn(styles.projectLogo)}>
+                <div className={cn(styles.projectLogoBg, noLogoBg ?? styles.logoDarkBg)}>
                   <img
                     src={projectLogo}
-                    className={cn(styles.camoLogo)}
+                    className={cn(styles.logoImg)}
                     alt='github'
                   />
                 </div>
-                www...
+             
               </a>
             ) : (
               <div

@@ -126,7 +126,7 @@ function App() {
         <div ref={homeSection}>
           <HomeContainer scrollToPortfolio={scrollToPortfolio} />
         </div>
-        {/* {!isLocked && ( */}
+        {!isLocked && (
           <>
             <section className='sectionPortfolio'>
               {isUnderground && <Underground />}
@@ -150,7 +150,7 @@ function App() {
             <Novohoodonosor />
             <Footer />
           </>
-        {/* )} */}
+        )}
       </div>
     </AppContext.Provider>
   );

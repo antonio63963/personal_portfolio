@@ -1,17 +1,43 @@
 .motionItemsRow {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   flex-wrap: wrap;
   margin-bottom: 50px;
+}
+
+.betweenMargin {
+  margin-top: 35px;
 }
 
 .projectsRow {
   display: flex;
   max-width: 100%;
 }
+
+.projectsRow {
+  display: flex;
+  max-width: 100%;
+}
+@media screen and (max-width: 850px) {
+  .title {
+    font-size: 48px;
+    line-height: 42px;
+  }
+  .betweenMargin {
+    margin-top: 22px;
+  }
+}
 @media screen and (max-width: 715px) {
   .projectsRow {
     flex-direction: column;
+  }
+  .betweenMargin {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .skilsSection {
+    padding: 0 10px;
   }
 }
