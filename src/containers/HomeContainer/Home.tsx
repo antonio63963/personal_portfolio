@@ -2,6 +2,7 @@ import {
   FC,
   useState,
   useEffect,
+  useLayoutEffect,
   useRef,
   useCallback,
   useContext,
@@ -102,17 +103,19 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
     [isLocked, isMorpheusBtnActive, lottieAnimation, scrollToPortfolio]
   );
 
-  useEffect(() => {
-    if (lottieContainer?.current) {
-      const anim = lottie.loadAnimation({
-        container: lottieContainer.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        animationData: require("lottie/morpheus.json"),
-      });
-      setLottieAnimation(anim);
-    }
+  useLayoutEffect(() => {
+    if (!lottieContainer?.current) return;
+
+    const anim = lottie.loadAnimation({
+      container: lottieContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("lottie/morpheus.json"),
+    });
+    setLottieAnimation(anim);
+    
+    return () => anim.destroy();
   }, []);
 
   useEffect(() => {
@@ -145,7 +148,12 @@ const Home: FC<HomeProps> = ({ scrollToPortfolio }) => {
         </div>
         <div className={cn(styles.col_lottie)}>
           <div className={cn(styles.lottieContainer)}>
-            {isCatchUp && <div onClick={catchUpThePhone} className={cn(styles.transparantLayer)}></div>}
+            {isCatchUp && (
+              <div
+                onClick={catchUpThePhone}
+                className={cn(styles.transparantLayer)}
+              ></div>
+            )}
             <div className={cn(styles.transparentButtonsRow)}>
               <button
                 className={cn("btn", styles.animation_btn)}

@@ -1,0 +1,124 @@
+.skilsSection {
+  padding: 0 30px;
+  max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 30px;
+  font-size: 52px;
+  color: var(--textColor);
+  margin: 0;
+  line-height: 52px;
+}
+.skilCol_content {
+  display: flex;
+  height: 100%;
+}
+.content_img_wrapper {
+  margin-top: auto;
+  margin-left: 20px;
+  flex-shrink: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.content_img {
+  width: 100px;
+  margin-left: auto;
+  margin-right: 15px;
+  align-self: flex-end;
+  opacity: 0.5;
+}
+.skilsRow {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skilsCol {
+  /* flex: 2 2 auto; */
+  flex-grow: 2;
+  margin-top: 15px;
+  border-radius: 15px;
+  min-width: 210px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 1s ease-in;
+  animation: outItemAnimation .5s ease-out;
+}
+
+.skilsCol:last-child {
+  margin-left: 20px;
+}
+
+.titleOther {
+  margin: 35px 0 20px 0;
+  font-size: 36px;
+}
+.skilsCol:hover,
+.otherSkills:hover {
+  animation: itemAnimation 1s ease-in-out forwards;
+}
+.skilIcon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.skilCol_title {
+  text-align: center;
+  margin: 7px 0 25px 0;
+  font-size: 22px;
+}
+
+.listSkils {
+  display: flex;
+  flex-direction: column;
+}
+.listSkils > li {
+  display: flex;
+  align-items: center;
+  color: var(--blueTextColor);
+  margin: 5px;
+  line-height: 1.2rem;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.lottieContainer {
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+@media screen and (max-width: 850px) {
+  .title {
+    font-size: 48px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .title {
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .skilSection {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .skilsSection {
+    padding: 0 10px;
+  }
+}
+
+@keyframes itemAnimation {
+  0% 
